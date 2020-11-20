@@ -14,11 +14,12 @@ public class cyberNoir {
 		int opcao = 0;
 
 		do {
-			System.out.println("-- Menu -- ");
-			System.out.println("1 - Jogar");
+			System.out.println("----------------------");
+			System.out.println("Menu");
+			System.out.println("\n1 - Jogar");
 			System.out.println("2 - Créditos");
 			System.out.println("3 - Sair");
-			System.out.println("");
+			System.out.println("----------------------");
 			opcao = input.nextInt();
 		} while (opcao < 1 || opcao > 4);
 
@@ -30,9 +31,11 @@ public class cyberNoir {
 
 		String name;
 
-		System.out.println("\nBem vindo Jogador");
+		System.out.println("----------------------");
+		System.out.println("Bem vindo Jogador");
 		System.out.print("Informe seu nome á nos: ");
 		name = input.next();
+		System.out.println("----------------------");
 		System.out.println("");
 
 		return name;
@@ -40,11 +43,11 @@ public class cyberNoir {
 
 	static void credits() {
 
-		System.out.println("");
+		System.out.println("----------------------");
 		System.out.println("Créditos a Grupo 10 - Xiaomeiros");
 		System.out.println("\n Vitor Akira\n João Maziteli\n Tainara Almeida\n Matheus Alencar\n Yvens Borges\n");
 		System.out.println("Developed in Java ");
-		System.out.println("");
+		System.out.println("----------------------");	
 	}
 
 	static int cidades() {
@@ -52,10 +55,11 @@ public class cyberNoir {
 		int opcaoC;
 
 		do {
-			System.out.println("-- Menu -- ");
-			System.out.println("1 - Grajau");
+			System.out.println("----------------------");
+			System.out.println("Menu");
+			System.out.println("\n1 - Grajau");
 			System.out.println("2 - Taboão da Serra");
-			System.out.println("");
+			System.out.println("----------------------");
 			opcaoC = input.nextInt();
 		} while (opcaoC < 1 || opcaoC > 3);
 
@@ -67,17 +71,18 @@ public class cyberNoir {
 		int opcaoG;
 
 		do {
-			System.out.println("");
-			System.out.println("-- Grajaú -- ");
+			System.out.println("----------------------");
+			System.out.println("Grajaú");
 			System.out.println("1 - Caso 1");
 			System.out.println("2 - Caso 2");
 			System.out.println("3 - Caso 3");
 			System.out.println("4 - Caso 4");
 			System.out.println("5 - Caso 5");
-			System.out.println("6 - Sair");
+			System.out.println("6 - Voltar");
+			System.out.println("----------------------");
 			System.out.println("");
 			opcaoG = input.nextInt();
-		} while (opcaoG < 1 || opcaoG > 6);
+		} while (opcaoG < 1 || opcaoG > 7);
 
 		return opcaoG;
 	}
@@ -87,17 +92,18 @@ public class cyberNoir {
 		int opcaoT;
 
 		do {
-			System.out.println("");
-			System.out.println("-- Taboao da Serra --");
+			System.out.println("----------------------");
+			System.out.println("Taboao da Serra");
 			System.out.println("1 - Caso 1");
 			System.out.println("2 - Caso 2");
 			System.out.println("3 - Caso 3");
 			System.out.println("4 - Caso 4");
 			System.out.println("5 - Caso 5");
-			System.out.println("6 - Sair");
+			System.out.println("6 - Voltar");
+			System.out.println("----------------------");
 			System.out.println("");
 			opcaoT = input.nextInt();
-		} while (opcaoT < 1 || opcaoT > 6);
+		} while (opcaoT < 1 || opcaoT > 7);
 
 		return opcaoT;
 	}
@@ -211,7 +217,9 @@ public class cyberNoir {
 				quit = true;
 				break;
 			case 3:
+				System.out.println("----------------------");
 				System.out.println("Você escolheu sair!.");
+				System.out.println("----------------------");
 				System.exit(0);
 				break;
 			default:
