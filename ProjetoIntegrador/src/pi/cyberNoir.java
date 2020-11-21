@@ -39,8 +39,6 @@ public class cyberNoir {
 		System.out.println("Bem vindo Jogador");
 		System.out.print("Qual seu nickname?: ");
 		name = input.next();
-		System.out.println("----------------------");
-		System.out.println("");
 
 		return name;
 	}
@@ -77,15 +75,10 @@ public class cyberNoir {
 		do {
 			System.out.println("----------------------");
 			System.out.println("Grajaú");
-			System.out.println("1 - Caso 1");
-			System.out.println("2 - Caso 2");
-			System.out.println("3 - Caso 3");
-			System.out.println("4 - Caso 4");
-			System.out.println("5 - Caso 5");
-			System.out.println("6 - Voltar");
+			System.out.println("1 - Iniciar casos Grajaú");
 			System.out.println("----------------------");
 			opcaoG = input.nextInt();
-		} while (opcaoG < 1 || opcaoG > 7);
+		} while (opcaoG < 1 || opcaoG > 2);
 
 		return opcaoG;
 	}
@@ -97,15 +90,10 @@ public class cyberNoir {
 		do {
 			System.out.println("----------------------");
 			System.out.println("Taboao da Serra");
-			System.out.println("1 - Caso 1");
-			System.out.println("2 - Caso 2");
-			System.out.println("3 - Caso 3");
-			System.out.println("4 - Caso 4");
-			System.out.println("5 - Caso 5");
-			System.out.println("6 - Voltar");
+			System.out.println("1 - Iniciar casos Taboao");
 			opcaoT = input.nextInt();
 			System.out.println("----------------------");
-		} while (opcaoT < 1 || opcaoT > 7);
+		} while (opcaoT < 1 || opcaoT > 2);
 
 		return opcaoT;
 	}
@@ -138,152 +126,142 @@ public class cyberNoir {
 		Boolean sair = false;
 
 		do {
+			Boolean correto = hacking1();
+			if (correto == true) {
+				int vidaInimigo1_C1 = 10;
+				int defInimigo1_C1 = 0;
 
-			switch (opcaoG) {
-			case 1:
-				Boolean correto = hacking1();
-				if (correto == true) {
-					int vidaInimigo1_C1 = 10;
-					int defInimigo1_C1 = 0;
+				System.out.println("----------------------");
+				System.out.println("Seguindo em frente");
+				System.out.println("----------------------");
 
-					System.out.println("----------------------");
-					System.out.println("Seguindo em frente");
-					System.out.println("----------------------");
+				Boolean correto2 = combat(vidaInimigo1_C1, defInimigo1_C1);
 
-					Boolean correto2 = combat(vidaInimigo1_C1, defInimigo1_C1);
+				if (correto2 == true) {
 
-					if (correto2 == true) {
-
-						int vidaInimigo2_C1 = 10;
-						int defInimigo2_C1 = 0;
-
-						System.out.println("----------------------");
-						System.out.println("Seguindo em frente");
-						System.out.println("----------------------");
-
-						combat(vidaInimigo2_C1, defInimigo2_C1);
-
-						System.out.println("----------------------");
-						System.out.println("Seguindo em frente");
-						System.out.println("----------------------");
-
-						Boolean correto3 = hacking2();
-
-						if (correto3 == true) {
-
-							int vidaBoss_C1 = 10;
-							int defBoss_C1 = 5;
-
-							Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1);
-
-							if (Finalizado == true) {
-								System.out.println("Esse caso foi finalizado!");
-								g1 = 1;
-							}
-						}
-					}
-				}
-				break;
-			case 2:
-				Boolean corretog1 = hacking1();
-				if (corretog1 == true) {
-					int vidaInimigo1_C1 = 10;
-					int defInimigo1_C1 = 0;
+					int vidaInimigo2_C1 = 10;
+					int defInimigo2_C1 = 0;
 
 					System.out.println("----------------------");
 					System.out.println("Seguindo em frente");
 					System.out.println("----------------------");
 
-					Boolean corretog2 = combat(vidaInimigo1_C1, defInimigo1_C1);
-
-					if (corretog2 == true) {
-
-						int vidaInimigo2_C1 = 10;
-						int defInimigo2_C1 = 0;
-
-						System.out.println("----------------------");
-						System.out.println("Seguindo em frente");
-						System.out.println("----------------------");
-
-						combat(vidaInimigo2_C1, defInimigo2_C1);
-
-						System.out.println("----------------------");
-						System.out.println("Seguindo em frente");
-						System.out.println("----------------------");
-
-						Boolean corretog3 = hacking2();
-
-						if (corretog3 == true) {
-
-							int vidaBoss_C1 = 10;
-							int defBoss_C1 = 5;
-
-							Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1);
-
-							if (Finalizado == true) {
-								System.out.println("Esse caso foi finalizado!");
-								g2 = 1;
-							}
-						}
-					}
-				}
-				break;
-			case 3:
-				System.out.println("Hackear > Hackear > Hackear");
-				break;
-			case 4:
-				System.out.println("Hackear > Hackear");
-				break;
-			case 5:
-				Boolean corretogg1 = hacking1();
-				if (corretogg1 == true) {
-					int vidaInimigo1_C1 = 10;
-					int defInimigo1_C1 = 0;
+					combat(vidaInimigo2_C1, defInimigo2_C1);
 
 					System.out.println("----------------------");
 					System.out.println("Seguindo em frente");
 					System.out.println("----------------------");
 
-					Boolean corretogg2 = combat(vidaInimigo1_C1, defInimigo1_C1);
+					Boolean correto3 = hacking2();
 
-					if (corretogg2 == true) {
+					if (correto3 == true) {
 
-						int vidaInimigo2_C1 = 10;
-						int defInimigo2_C1 = 0;
+						int vidaBoss_C1 = 10;
+						int defBoss_C1 = 5;
 
-						System.out.println("----------------------");
-						System.out.println("Seguindo em frente");
-						System.out.println("----------------------");
+						Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1);
 
-						combat(vidaInimigo2_C1, defInimigo2_C1);
-
-						System.out.println("----------------------");
-						System.out.println("Seguindo em frente");
-						System.out.println("----------------------");
-
-						Boolean corretogg3 = hacking2();
-
-						if (corretogg3 == true) {
-
-							int vidaBoss_C1 = 10;
-							int defBoss_C1 = 5;
-
-							Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1);
-
-							if (Finalizado == true) {
-								System.out.println("Esse caso foi finalizado!");
-								g3 = 1;
-							}
+						if (Finalizado == true) {
+							System.out.println("Esse caso foi finalizado!");
+							g1 = 1;
 						}
 					}
-				}
-				break;
-			default:
-
-				if (g1 == 1 && g2 == 1 && g3 == 1) {
-					sair = true;
 				}
 			}
+			Boolean corretog1 = hacking1();
+			if (corretog1 == true) {
+				int vidaInimigo1_C1 = 10;
+				int defInimigo1_C1 = 0;
+
+				System.out.println("----------------------");
+				System.out.println("Seguindo em frente");
+				System.out.println("----------------------");
+
+				Boolean corretog2 = combat(vidaInimigo1_C1, defInimigo1_C1);
+
+				if (corretog2 == true) {
+
+					int vidaInimigo2_C1 = 10;
+					int defInimigo2_C1 = 0;
+
+					System.out.println("----------------------");
+					System.out.println("Seguindo em frente");
+					System.out.println("----------------------");
+
+					combat(vidaInimigo2_C1, defInimigo2_C1);
+
+					System.out.println("----------------------");
+					System.out.println("Seguindo em frente");
+					System.out.println("----------------------");
+
+					Boolean corretog3 = hacking2();
+
+					if (corretog3 == true) {
+
+						int vidaBoss_C1 = 10;
+						int defBoss_C1 = 5;
+
+						Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1);
+
+						if (Finalizado == true) {
+							System.out.println("Esse caso foi finalizado!");
+							g2 = 1;
+						}
+					}
+				}
+			}
+
+			System.out.println("Hackear > Hackear > Hackear");
+
+			System.out.println("Hackear > Hackear");
+
+			Boolean corretogg1 = hacking1();
+			if (corretogg1 == true) {
+				int vidaInimigo1_C1 = 10;
+				int defInimigo1_C1 = 0;
+
+				System.out.println("----------------------");
+				System.out.println("Seguindo em frente");
+				System.out.println("----------------------");
+
+				Boolean corretogg2 = combat(vidaInimigo1_C1, defInimigo1_C1);
+
+				if (corretogg2 == true) {
+
+					int vidaInimigo2_C1 = 10;
+					int defInimigo2_C1 = 0;
+
+					System.out.println("----------------------");
+					System.out.println("Seguindo em frente");
+					System.out.println("----------------------");
+
+					combat(vidaInimigo2_C1, defInimigo2_C1);
+
+					System.out.println("----------------------");
+					System.out.println("Seguindo em frente");
+					System.out.println("----------------------");
+
+					Boolean corretogg3 = hacking2();
+
+					if (corretogg3 == true) {
+
+						int vidaBoss_C1 = 10;
+						int defBoss_C1 = 5;
+
+						Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1);
+
+						if (Finalizado == true) {
+							System.out.println("Esse caso foi finalizado!");
+							g3 = 1;
+						}
+					}
+				}
+			}
+
+			if (g1 == 1 && g2 == 1 && g3 == 1) {
+				sair = true;
+			}
+
 		} while (!sair);
 
 		opcaoG = 1;
@@ -516,7 +494,7 @@ public class cyberNoir {
 		return correto;
 	}
 
-	static boolean combat(float vidaInimigo, float defInimigo) {
+	static Boolean combat(float vidaInimigo, float defInimigo) {
 
 		// vida e defesa do inimigo
 
@@ -688,6 +666,24 @@ public class cyberNoir {
 
 		return acertou;
 	}
+	
+	static int karen() {
+		
+		int vitoria = 0;
+		
+		int vidaInimigo2_C1 = 10;
+		int defInimigo2_C1 = 0;
+
+		System.out.println("----------------------");
+		System.out.println("Seguindo em frente");
+		System.out.println("----------------------");
+
+		combat(vidaInimigo2_C1, defInimigo2_C1);
+		
+		vitoria = 1;
+		
+		return vitoria;
+	}
 
 	public static void main(String args[]) {
 
@@ -695,7 +691,7 @@ public class cyberNoir {
 
 		int escolha = 0, escolha2 = 0;
 
-		Boolean quit = false;
+		Boolean quit = false, quit2 = false;
 
 		do {
 			opcao = main();
@@ -711,27 +707,24 @@ public class cyberNoir {
 					controleTaboao();
 				}
 
-				int retornoG = controleGrajau();
+				do {
 
-				escolha2 = controleCidades();
+					escolha2 = controleCidades();
+
+					if (escolha2 == 1) {
+						System.out.println("----------------------");
+						System.out.println("Você já finalizou os casos deste distrito");
+						System.out.println("----------------------");
+					}
+					if (escolha2 == 2) {
+						quit2 = true;
+
+					}
+
+				} while (!quit2);
+				controleTaboao();
 				
-				if (retornoG == 1) {
-					System.out.println("Você já finalizou os casos deste distrito");
-				}
-				if (retornoG == 2) {
-					controleTaboao();
-				}
-
-				int retornoT = controleGrajau();
-
-				if (retornoT == 1) {
-					System.out.println("Você já finalizou os casos deste distrito");
-				}
-				if (retornoT == 2) {
-					System.out.println("Você já finalizou os casos deste distrito");
-
-				}
-				
+				karen();
 
 				quit = true;
 				break;
