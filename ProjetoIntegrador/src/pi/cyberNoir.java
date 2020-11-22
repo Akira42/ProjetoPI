@@ -622,7 +622,7 @@ public class cyberNoir {
 		int r = 0;
 		int resposta = 1;
 
-		Boolean acertou = false;
+		Boolean correto = false;
 
 		System.out.println("----------------------");
 		System.out.println("A seguinte matriz 2D está com um valor diferente do padrão dela. "
@@ -662,15 +662,155 @@ public class cyberNoir {
 			System.out.println("----------------------");
 		System.out.println("Você encontrou a obstrução na matriz!");
 		System.out.println("----------------------");
-		acertou = true;
+		correto = true;
 
-		return acertou;
+		return correto;
 	}
-	
+
+	static Boolean hacking3() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking4() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking5() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking6() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking7() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking8() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking9() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking10() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking11() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking12() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking13() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking14() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking15() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking16() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking17() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking18() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking19() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking20() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking21() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
+	static Boolean hacking22() {
+
+		Boolean correto = false;
+
+		return correto;
+	}
+
 	static int karen() {
-		
+
 		int vitoria = 0;
-		
+
 		int vidaInimigo2_C1 = 10;
 		int defInimigo2_C1 = 0;
 
@@ -679,9 +819,9 @@ public class cyberNoir {
 		System.out.println("----------------------");
 
 		combat(vidaInimigo2_C1, defInimigo2_C1);
-		
+
 		vitoria = 1;
-		
+
 		return vitoria;
 	}
 
@@ -723,7 +863,7 @@ public class cyberNoir {
 
 				} while (!quit2);
 				controleTaboao();
-				
+
 				karen();
 
 				quit = true;
