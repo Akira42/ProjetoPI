@@ -116,6 +116,9 @@ public class cyberNoir {
 		do {
 			System.out.println("----------------------");
 			System.out.println("Grajaú");
+			System.out.println("");
+			System.out.println("	O lugar onde o crime vive de dia ou de noite... (Breve resumo do Grajaú)");
+			System.out.println("");
 			System.out.println("\n1 - Iniciar casos Grajaú");
 			System.out.println("----------------------");
 			opcaoG = input.nextInt();
@@ -828,23 +831,21 @@ public class cyberNoir {
 
 		do {
 
-			respostah5.add("for(int i = 0; i < array.lenght; i++"
+			respostah5.add("for(int i = 0; i < array.lenght; i++) {"
 					+ "\n array[i] = 10;"
 					+ "\n}");
-			respostah5.add("for(int i = 0; i < array.lenght; i++"
+			respostah5.add("for(int i = 0; i < array.lenght; i++) {"
 					+ "\n array[10] = 0"
 					+ "\n}");
-			respostah5.add("for(int i = 0; i < array.lenght; i++"
+			respostah5.add("for(int i = 0; i < array.lenght; i++) {"
 					+ "\n array[i] = 23"
 					+ "\n}"); // Correta
-			respostah5.add("for(int i = 0; i < array.lenght; i++"
+			respostah5.add("for(int i = 0; i < array.lenght; i++) {"
 					+ "\n array[0] = 23"
 					+ "\n}");
 
 			System.out.println("Desafio: Um array unidimensional em um código teve seu conteúdo inteiro alterado para 10 sendo que antes era 23."
 					+ "Qual a alternativa correta para o array voltar ao seu conteudo original?");
-			System.out.println("");
-			System.out.println("int nomeArray [] = *** *** [*]; ");
 			System.out.println("");
 			System.out.println("1 - " + respostah5.get(0));
 			System.out.println("2 - " + respostah5.get(1));
@@ -857,6 +858,7 @@ public class cyberNoir {
 		if (resultado == resposta) {
 			System.out.println("----------------------");
 			System.out.println("Descriptografada. Seguindo em frente >>>");
+			System.out.println("----------------------");
 			correto = true;
 		}
 
@@ -864,34 +866,155 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking6() {
+		
+		int resultado, resposta = 2;
 
 		Boolean correto = false;
+		
+		System.out.println("- Criptografia 2 - ");
+		System.out.println("Resolva o desafio abaixo para prosseguir");
+		System.out.println("----------------------");
+
+		do {
+
+			respostah6.add("Match.pow();");
+			respostah6.add("Math.pow();"); // Correta
+			respostah6.add("Match.sqrt();");
+			respostah6.add("math.sqrt();");
+
+			System.out.println("Desafio: Qual a função utilizada para calcular potências?");
+			System.out.println("");
+			System.out.println("1 - " + respostah6.get(0));
+			System.out.println("2 - " + respostah6.get(1));
+			System.out.println("3 - " + respostah6.get(2));
+			System.out.println("4 - " + respostah6.get(3));
+			System.out.println("----------------------");
+			resultado = input.nextInt();
+
+		} while (resultado != resposta);
+		if (resultado == resposta) {
+			System.out.println("----------------------");
+			System.out.println("\"Descriptografada. Seguindo em frente >>>");
+			System.out.println("----------------------");
+			correto = true;
+		}
 
 		return correto;
 	}
 
 	static Boolean hacking7() {
+		
+		int resultado, resposta = 3;
 
 		Boolean correto = false;
+		
+		System.out.println("- Criptografia 3 - ");
+		System.out.println("Resolva o desafio abaixo para prosseguir");
+		System.out.println("----------------------");
+
+		do {
+
+			respostah7.add("“<” no if e “++” no i");
+			respostah7.add("“<” no if e “--” no i"); 
+			respostah7.add("“>” no if e “++” no i");
+			respostah7.add("“>” no if e “--” no i");
+
+			System.out.println("Desafio: No seguinte laço, o que esta faltando para que seja possivel imprimir uma contagem de 1 a 50?");
+			System.out.println("");
+			System.out.println("1 - " + respostah7.get(0));
+			System.out.println("2 - " + respostah7.get(1));
+			System.out.println("3 - " + respostah7.get(2));
+			System.out.println("4 - " + respostah7.get(3));
+			System.out.println("----------------------");
+			resultado = input.nextInt();
+
+		} while (resultado != resposta);
+		if (resultado == resposta) {
+			System.out.println("----------------------");
+			System.out.println("\"Descriptografada. Seguindo em frente >>>");
+			System.out.println("----------------------");
+			correto = true;
+		}
 
 		return correto;
 	}
 
 	static Boolean hacking8() {
+		
+		int resultado, resposta = 2;
 
 		Boolean correto = false;
+		
+		System.out.println("- Criptografia 4 - ");
+		System.out.println("Resolva o desafio abaixo para prosseguir");
+		System.out.println("----------------------");
+
+		do {
+
+			respostah8.add("Match.sqrt()");
+			respostah8.add("Math.sqrt(121);"); // Correta
+			respostah8.add("Match.sqrt();");
+			respostah8.add("Mathsqrt()");
+
+			System.out.println("Desafio: Qual a função correta para resolver a raiz quadrada de 121?");
+			System.out.println("");
+			System.out.println("1 - " + respostah8.get(0));
+			System.out.println("2 - " + respostah8.get(1));
+			System.out.println("3 - " + respostah8.get(2));
+			System.out.println("4 - " + respostah8.get(3));
+			System.out.println("----------------------");
+			resultado = input.nextInt();
+
+		} while (resultado != resposta);
+		if (resultado == resposta) {
+			System.out.println("----------------------");
+			System.out.println("\"Descriptografada. Seguindo em frente >>>");
+			System.out.println("----------------------");
+			correto = true;
+		}
 
 		return correto;
 	}
 
 	static Boolean hacking9() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
+		
+		System.out.println("- Criptografia 5 - ");
+		System.out.println("Resolva o desafio abaixo para prosseguir");
+		System.out.println("----------------------");
+
+		do {
+
+			respostah9.add("Scanner “Variavel” = Scanner(Scanner.in);");
+			respostah9.add("Scanner “Variavel” = Scanner(Scanner.in);");
+			respostah9.add("Scanner Scanner = Scanner(Scanner.in);");
+			respostah9.add("Scanner “Variavel” = new Scanner(System.in);"); // Correta
+
+			System.out.println("Desafio: Qual a maneira correta de declarar um Scanner?");
+			System.out.println("");
+			System.out.println("1 - " + respostah9.get(0));
+			System.out.println("2 - " + respostah9.get(1));
+			System.out.println("3 - " + respostah9.get(2));
+			System.out.println("4 - " + respostah9.get(3));
+			System.out.println("----------------------");
+			resultado = input.nextInt();
+
+		} while (resultado != resposta);
+		if (resultado == resposta) {
+			System.out.println("----------------------");
+			System.out.println("\"Descriptografada. Seguindo em frente >>>");
+			correto = true;
+		}
 
 		return correto;
 	}
 
 	static Boolean hacking10() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
@@ -899,6 +1022,8 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking11() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
@@ -906,6 +1031,8 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking12() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
@@ -913,6 +1040,8 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking13() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
@@ -920,6 +1049,8 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking14() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
@@ -927,6 +1058,8 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking15() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
@@ -934,6 +1067,8 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking16() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
@@ -941,6 +1076,8 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking17() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
@@ -948,6 +1085,8 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking18() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
@@ -955,6 +1094,8 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking19() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
@@ -962,6 +1103,8 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking20() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
@@ -969,6 +1112,8 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking21() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
@@ -976,6 +1121,8 @@ public class cyberNoir {
 	}
 
 	static Boolean hacking22() {
+		
+		int resultado, resposta = 4;
 
 		Boolean correto = false;
 
