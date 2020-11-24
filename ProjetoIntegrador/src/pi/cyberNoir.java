@@ -188,23 +188,23 @@ public class cyberNoir {
 				System.out.println("----------------------");
 				System.out.println("Você encontra um inimigo a frente...");
 				System.out.println("\n"
-						+ "##################################\n"
-						+ "#⠄⠄⠄⠄⢠⡜⢣⡜⢣⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⢣⡄⠄⠄⠄⠄#\n"
-						+ "#⠄⠄⠄⣀⡧⢜⡣⢜⡣⢼⣇⣀⣀⣀⣀⣀⣀⣀⣀⡀⠄⠄⠄⠄⠄⠸⢇⠄⠄⠄#\n"
-						+ "#⠄⠄⠄⣿⣷⣎⣱⣾⣷⣎⣹⣏⣿⣉⣿⣉⣿⣉⣿⢱⡶⢆⣀⡀⠄⠄⢸⠄⠄⠄#\n"
-						+ "#⠄⠄⣶⣿⣿⣿⣿⣏⣹⡿⠿⠿⠉⠉⠉⠉⠉⠉⠿⠾⢇⣸⡏⢱⡶⢆⡈⣶⠄⠄#\n"
-						+ "#⠄⠄⣿⣿⣿⡿⢿⡿⢏⡁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠱⠾⢇⣸⡷⣿⠄⠄#\n"
-						+ "#⠄⠄⣿⣿⣿⣷⣮⣥⣬⣥⣤⣤⠄⠄⠄⠄⠄⠄⣤⣤⣤⣤⣤⣤⣬⣽⣧⣿⠄⠄#\n"
-						+ "#⠄⠄⠄⠛⣿⣿⣿⣿⣿⣿⣧⡜⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⢻⣿⣿⣧⡜⠄⠄⠄#\n"
-						+ "#⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⠄⠄⠛⣿⣿⣿⣿⣿⣿⡟⠃⢸⡇⠄⠄⠄#\n"
-						+ "#⠄⠄⠄⠄⢻⣧⡜⠛⠛⠛⠛⠛⠄⠄⣿⠄⠄⠄⠛⠛⠛⠛⠃⠄⢠⡜⠃⠄⠄⠄#\n"
-						+ "#⠄⠄⠄⠄⠸⢿⣿⡇⠄⠄⠄⠄⠄⠿⣿⣀⠶⠄⠄⠄⠄⠄⠄⢀⡸⠇⠄⠄⠄⠄#\n"
-						+ "#⠄⠄⠄⠄⠄⠸⢿⣇⡀⠄⠄⠄⠄⠄⣉⠉⠄⠄⠄⠄⠄⠄⢀⡸⠇⠄⠄⠄⠄⠄#\n"
-						+ "#⠄⠄⠄⠄⠄⠄⢸⣿⣇⡀⠄⠰⠶⠶⠿⠶⠶⠶⠶⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄#\n"
-						+ "#⠄⠄⠄⠄⠄⠄⠈⢹⣿⣷⡆⢀⠄⠄⣀⣀⣀⠄⠄⠄⢀⡰⢾⡇⠄⠄⠄⠄⠄⠄#\n"
-						+ "#⠄⠄⠄⠄⠄⠄⠄⢸⣿⣿⣿⣧⠛⣤⣤⣤⠄⠄⠄⣤⡜⠃⢸⡇⠄⠄⠄⠄⠄⠄#\n"
-						+ "#⣤⣤⣤⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⠛⠛⠛⠛⠄⠄⠄⢠⣼⣿⣿⣧⣤⣤⣤#\n"
-						+ "##################################\n");
+						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n"
+						+ "■⠄⠄⠄⠄⢠⡜⢣⡜⢣⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⢣⡄⠄⠄⠄⠄■\n"
+						+ "■⠄⠄⠄⣀⡧⢜⡣⢜⡣⢼⣇⣀⣀⣀⣀⣀⣀⣀⣀⡀⠄⠄⠄⠄⠄⠸⢇⠄⠄⠄■\n"
+						+ "■⠄⠄⠄⣿⣷⣎⣱⣾⣷⣎⣹⣏⣿⣉⣿⣉⣿⣉⣿⢱⡶⢆⣀⡀⠄⠄⢸⠄⠄⠄■\n"
+						+ "■⠄⠄⣶⣿⣿⣿⣿⣏⣹⡿⠿⠿⠉⠉⠉⠉⠉⠉⠿⠾⢇⣸⡏⢱⡶⢆⡈⣶⠄⠄■\n"
+						+ "■⠄⠄⣿⣿⣿⡿⢿⡿⢏⡁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠱⠾⢇⣸⡷⣿⠄⠄■\n"
+						+ "■⠄⠄⣿⣿⣿⣷⣮⣥⣬⣥⣤⣤⠄⠄⠄⠄⠄⠄⣤⣤⣤⣤⣤⣤⣬⣽⣧⣿⠄⠄■\n"
+						+ "■⠄⠄⠄⠛⣿⣿⣿⣿⣿⣿⣧⡜⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⢻⣿⣿⣧⡜⠄⠄⠄■\n"
+						+ "■⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⠄⠄⠛⣿⣿⣿⣿⣿⣿⡟⠃⢸⡇⠄⠄⠄■\n"
+						+ "■⠄⠄⠄⠄⢻⣧⡜⠛⠛⠛⠛⠛⠄⠄⣿⠄⠄⠄⠛⠛⠛⠛⠃⠄⢠⡜⠃⠄⠄⠄■\n"
+						+ "■⠄⠄⠄⠄⠸⢿⣿⡇⠄⠄⠄⠄⠄⠿⣿⣀⠶⠄⠄⠄⠄⠄⠄⢀⡸⠇⠄⠄⠄⠄■\n"
+						+ "■⠄⠄⠄⠄⠄⠸⢿⣇⡀⠄⠄⠄⠄⠄⣉⠉⠄⠄⠄⠄⠄⠄⢀⡸⠇⠄⠄⠄⠄⠄■\n"
+						+ "■⠄⠄⠄⠄⠄⠄⢸⣿⣇⡀⠄⠰⠶⠶⠿⠶⠶⠶⠶⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄■\n"
+						+ "■⠄⠄⠄⠄⠄⠄⠈⢹⣿⣷⡆⢀⠄⠄⣀⣀⣀⠄⠄⠄⢀⡰⢾⡇⠄⠄⠄⠄⠄⠄■\n"
+						+ "■⠄⠄⠄⠄⠄⠄⠄⢸⣿⣿⣿⣧⠛⣤⣤⣤⠄⠄⠄⣤⡜⠃⢸⡇⠄⠄⠄⠄⠄⠄■\n"
+						+ "■⣤⣤⣤⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⠛⠛⠛⠛⠄⠄⠄⢠⣼⣿⣿⣧⣤⣤⣤■\n"
+						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 				
 
 				Boolean correto2 = combat(vidaInimigo1_C1, defInimigo1_C1);
@@ -376,6 +376,8 @@ public class cyberNoir {
 		int opcaoT = taboao();
 
 		Boolean sair = false;
+		
+		Boolean Finalizado = false;
 
 		do {
 
@@ -430,6 +432,10 @@ public class cyberNoir {
 					}
 				}
 			}
+			
+			Finalizado = true;
+			
+		} while (!Finalizado);
 
 			hacking14();
 
@@ -1311,14 +1317,14 @@ public class cyberNoir {
 
 		do {
 
-			respostah17.add("20");
-			respostah17.add("1010"); // Correta
-			respostah17.add("10,10");
-			respostah17.add("Nenhuma das anteriores"); 
+			respostah17.add("20.27");
+			respostah17.add("20"); 
+			respostah17.add("27");
+			respostah17.add("Nenhuma das anteriores"); // Correta
 
 			System.out.println("Desafio: Qual é o resultado da união abaixo");
 			System.out.println("");
-			System.out.println("int r = 10 + 10;");
+			System.out.println("int r = 10 + 10.27;");
 			System.out.println("");
 			System.out.println("1 - " + respostah17.get(0));
 			System.out.println("2 - " + respostah17.get(1));
@@ -1343,15 +1349,76 @@ public class cyberNoir {
 		int resultado, resposta = 4;
 
 		Boolean correto = false;
+		
+		System.out.println("- Bug matemático -");
+		System.out.println("Resolva o desafio abaixo para prosseguir");
+		System.out.println("----------------------");
+
+		do {
+
+			respostah18.add("5, 5");
+			respostah18.add("6, 6"); 
+			respostah18.add("5, 6");
+			respostah18.add("6, 5"); // Correta
+
+			System.out.println("Desafio:  Qual o resultado apresentado após a execução dos comandos Java abaixo?");
+			System.out.println("");
+			System.out.println("i. int var1 = 5;"
+					+ "\nii. int var2 = var1++;"
+					+ "\niii. System.out.println(var1 + “ e ” + var2);");
+			System.out.println("");
+			System.out.println("1 - " + respostah18.get(0));
+			System.out.println("2 - " + respostah18.get(1));
+			System.out.println("3 - " + respostah18.get(2));
+			System.out.println("4 - " + respostah18.get(3));
+			System.out.println("----------------------");
+			resultado = input.nextInt();
+
+		} while (resultado != resposta);	
+		if (resultado == resposta) {
+			System.out.println("----------------------");
+			System.out.println("Bug resolvido. Seguindo em frente >>>");
+			correto = true;
+
+		}
 
 		return correto;
 	}
 
 	static Boolean hacking19() {
 
-		int resultado, resposta = 4;
+		int resultado, resposta = 3;
 
 		Boolean correto = false;
+		
+		System.out.println("- Bug no sistema -");
+		System.out.println("Resolva o desafio abaixo para prosseguir");
+		System.out.println("----------------------");
+
+		do {
+
+			respostah19.add("public static String main (String[] args)");
+			respostah19.add("public static void main (String args)"); 
+			respostah19.add("public static void main (String[] args)"); // Correta
+			respostah19.add("public static int main (String[] args)"); 
+
+			System.out.println("Desafio:  O método “Main” deve possuir uma assinatura que é obrigatória. Escolha a "
+					+ "\nalternativa que corresponde à assinatura correta do método “Main”.");
+			System.out.println("");
+			System.out.println("1 - " + respostah19.get(0));
+			System.out.println("2 - " + respostah19.get(1));
+			System.out.println("3 - " + respostah19.get(2));
+			System.out.println("4 - " + respostah19.get(3));
+			System.out.println("----------------------");
+			resultado = input.nextInt();
+
+		} while (resultado != resposta);	
+		if (resultado == resposta) {
+			System.out.println("----------------------");
+			System.out.println("Bug resolvido. Seguindo em frente >>>");
+			correto = true;
+
+		}
 
 		return correto;
 	}
