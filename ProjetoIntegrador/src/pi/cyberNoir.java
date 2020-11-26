@@ -2,60 +2,17 @@ package pi;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class cyberNoir {
+	static int temp_dialog = 25, temp_narrativa = 50, temp_transicao = 80;
 
 	static Scanner input = new Scanner(System.in);
 
-	static ArrayList<String> respostah1 = new ArrayList<String>();
+	static int main() throws Exception {
 
-	static ArrayList<String> respostah2 = new ArrayList<String>();
-
-	static ArrayList<String> respostah3 = new ArrayList<String>();
-
-	static ArrayList<String> respostah4 = new ArrayList<String>();
-
-	static ArrayList<String> respostah5 = new ArrayList<String>();
-
-	static ArrayList<String> respostah6 = new ArrayList<String>();
-
-	static ArrayList<String> respostah7 = new ArrayList<String>();
-
-	static ArrayList<String> respostah8 = new ArrayList<String>();
-
-	static ArrayList<String> respostah9 = new ArrayList<String>();
-
-	static ArrayList<String> respostah10 = new ArrayList<String>();
-
-	static ArrayList<String> respostah11 = new ArrayList<String>();
-
-	static ArrayList<String> respostah12 = new ArrayList<String>();
-
-	static ArrayList<String> respostah13 = new ArrayList<String>();
-
-	static ArrayList<String> respostah14 = new ArrayList<String>();
-
-	static ArrayList<String> respostah15 = new ArrayList<String>();
-
-	static ArrayList<String> respostah16 = new ArrayList<String>();
-
-	static ArrayList<String> respostah17 = new ArrayList<String>();
-
-	static ArrayList<String> respostah18 = new ArrayList<String>();
-
-	static ArrayList<String> respostah19 = new ArrayList<String>();
-
-	static ArrayList<String> respostah20 = new ArrayList<String>();
-
-	static ArrayList<String> respostah21 = new ArrayList<String>();
-
-	static ArrayList<String> respostah22 = new ArrayList<String>();
-
-	static int main() {
-
-		int opcao = 0;
+		int opcao = 0; 
 
 		do {
 			System.out.println("----------------------");
@@ -73,7 +30,7 @@ public class cyberNoir {
 
 	}
 
-	static String insertionName() {
+	static String insertionName() throws Exception {
 
 		String name;
 
@@ -85,16 +42,16 @@ public class cyberNoir {
 		return name;
 	}
 
-	static void credits() {
+	static void credits() throws Exception {
 
 		System.out.println("----------------------");
 		System.out.println("Créditos a Grupo 10 - Xiaomeiros");
-		System.out.println("\n Vitor Akira\n João Maziteli\n Tainara Almeida\n Matheus Alencar\n Yvens Borges\n");
+		System.out.println("\n Vitor Akira\n João Maziteli\n Tainara Almeida\n Matheus Alencar\n");
 		System.out.println("Developed in Java ");
 		System.out.println("----------------------");
 	}
 
-	static int iniciar() {
+	static int iniciar() throws Exception {
 
 		int opcaoC;
 
@@ -108,52 +65,75 @@ public class cyberNoir {
 		return opcaoC;
 	}
 
-	static void historia() {
+	static void historia() throws Exception {
+        
+		String nomeJogador = insertionName();
 		
-		System.out.println("----------------------");	
-		System.out.println("AQUI VAI FICAR UMA GRANDE HISTORIA");
-		
-		
-		
+		Print("----------------------", TimeUnit.MILLISECONDS, temp_dialog);	
+		Print("\n\nCaro "+nomeJogador+" seja bem vindo de volta ao escritório, nosso departamento policial "
+                        +"ficou uma bagunça desde que você entrou de férias. ", TimeUnit.MILLISECONDS, temp_narrativa);
+                Print("\nMuitos casos desaparecimentos e algumas coisas estranhas começaram acontecer em "
+                        + "algumas cidades da região!", TimeUnit.MILLISECONDS, temp_narrativa);
+                Print("\nVamos precisar de você bem focado nessa missão, poís não será nada fácil.", TimeUnit.MILLISECONDS, temp_narrativa);
+                Print("\nA propósito a Karen está com saudade de você, quase toda dia ela perguntava se você "
+                        + "estava bem.", TimeUnit.MILLISECONDS, temp_narrativa);
+                
+                Print("\n\n***Você vai para a sua sala***\n\n", TimeUnit.MILLISECONDS, temp_transicao);
+                
+                Print(nomeJogador+"\n: Olá Karen, quanto tempo! Como você está?", TimeUnit.MILLISECONDS, temp_narrativa);
+                
+                Print("\n\n***Karen é sua assistente pessoal, ela é uma inteligencia artificial.***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                
+                //ASCI KAREN FELIZ!!!!
+                                
+                Print("\nKaren: Olá "+nomeJogador+" como você está?", TimeUnit.MILLISECONDS, temp_narrativa);
+                
+                Print("\n"+nomeJogador+": Eu estou bem, fiquei sabendo que a situação não está muito boa na região,"
+                        + "poderia separar uma lista de ditritos aonde eu preciso passar?", TimeUnit.MILLISECONDS, temp_narrativa);        
+
+                Print("\nKaren: É bom te ter devolta!!!", TimeUnit.MILLISECONDS, temp_narrativa);
+                
+                Print("\nKaren: Estou providênciando uma lista agora mesmo, vou traçar uma rota para você e todos os distritos que você precisar investigar!", TimeUnit.MILLISECONDS, temp_narrativa);
+                
+                Print("\n"+nomeJogador+": Valeu Karen!!!", TimeUnit.MILLISECONDS, temp_narrativa);
+                
+                Print("\nKaren: Distrito: Grajaú"
+                        + "\nDistrito: Taboão"
+                        + "\nCada cidade tem 3 casos e cada caso 3 e 5 hackings, e todos tem 3 combates!", TimeUnit.MILLISECONDS, temp_narrativa);
+ 
 	}
 	
-	static int grajau() {
+	static int grajau() throws Exception {
 
 		int opcaoG;
 
 		do {
-			System.out.println("----------------------");
-			System.out.println("Grajaú");
-			System.out.println("");
-			System.out.println("	O lugar onde o crime vive de dia ou de noite... (Breve resumo do Grajaú)");
-			System.out.println("");
-			System.out.println("1 - Iniciar casos Grajaú");
-			System.out.println("----------------------");
+			
+			Print("\n ---------------------- \n Grajaú \n", TimeUnit.MILLISECONDS, temp_dialog);
+			Print("O lugar onde o crime vive de dia ou de noite... (Breve resumo do Grajaú) \n", TimeUnit.MILLISECONDS, temp_narrativa);
+			Print("1 - Iniciar casos Grajaú \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_dialog);
 			opcaoG = input.nextInt();
 		} while (opcaoG < 1 || opcaoG > 2);
 
 		return opcaoG;
 	}
 
-	static int taboao() {
+	static int taboao() throws Exception {
 
 		int opcaoT;
 
-		do {
-			System.out.println("----------------------");
-			System.out.println("Taboao da Serra");
-			System.out.println("");
-			System.out.println("	O lugar onde o crime vive de dia ou de noite... (Breve resumo do Taboao");
-			System.out.println("");
-			System.out.println("1 - Iniciar casos Taboao");
+		do {			
+			Print("---------------------- \n Taboão da Serra \n", TimeUnit.MILLISECONDS, temp_narrativa);
+			Print("\n O lugar onde o crime vive de dia ou de noite... (Breve resumo do Taboao \n", TimeUnit.MILLISECONDS, temp_narrativa);
+			Print("\n 1 - Iniciar casos Taboao", TimeUnit.MILLISECONDS, temp_narrativa);
 			opcaoT = input.nextInt();
-			System.out.println("----------------------");
+			Print("\n ---------------------- ", TimeUnit.MILLISECONDS, temp_narrativa);
 		} while (opcaoT < 1 || opcaoT > 2);
 
 		return opcaoT;
 	}
 
-	static int controleCidades() {
+	static int controleCidades() throws Exception {
 
 		int opcaoC = iniciar();
 
@@ -161,134 +141,243 @@ public class cyberNoir {
 		case 1:
 			break;
 		default:
-			System.out.print("Opção Inválida =(");
-			System.out.println("");
+			Print("Opção Inválida =( \n", TimeUnit.MILLISECONDS, temp_dialog);
 			break;
 		}
 
 		return opcaoC;
-
 	}
 
-	static int controleGrajau() {
+	//casos grajau
+	
+	static int controleGrajau() throws Exception {
 
 		int opcaoG = grajau();
 
 		Boolean sair = false;
 
 		do {
+			int vidaJogador = 10, defJogador = 0, atkJogador = 20; //declaração da vida e defesa do jogador
+			//CASO 1 Grajau
 
 			Boolean correto = hacking1();
+			
 			if (correto == true) {
 				int vidaInimigo1_C1 = 10;
 				int defInimigo1_C1 = 0;
-
-				System.out.println("----------------------");
-				System.out.println("Narração: ");
-				System.out.println("----------------------");
-				System.out.println("Você encontra um inimigo a frente...");
-				System.out.println("\n"
-						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n"
-						+ "■⠄⠄⠄⠄⢠⡜⢣⡜⢣⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⢣⡄⠄⠄⠄⠄■\n"
-						+ "■⠄⠄⠄⣀⡧⢜⡣⢜⡣⢼⣇⣀⣀⣀⣀⣀⣀⣀⣀⡀⠄⠄⠄⠄⠄⠸⢇⠄⠄⠄■\n"
-						+ "■⠄⠄⠄⣿⣷⣎⣱⣾⣷⣎⣹⣏⣿⣉⣿⣉⣿⣉⣿⢱⡶⢆⣀⡀⠄⠄⢸⠄⠄⠄■\n"
-						+ "■⠄⠄⣶⣿⣿⣿⣿⣏⣹⡿⠿⠿⠉⠉⠉⠉⠉⠉⠿⠾⢇⣸⡏⢱⡶⢆⡈⣶⠄⠄■\n"
-						+ "■⠄⠄⣿⣿⣿⡿⢿⡿⢏⡁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠱⠾⢇⣸⡷⣿⠄⠄■\n"
-						+ "■⠄⠄⣿⣿⣿⣷⣮⣥⣬⣥⣤⣤⠄⠄⠄⠄⠄⠄⣤⣤⣤⣤⣤⣤⣬⣽⣧⣿⠄⠄■\n"
-						+ "■⠄⠄⠄⠛⣿⣿⣿⣿⣿⣿⣧⡜⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⢻⣿⣿⣧⡜⠄⠄⠄■\n"
-						+ "■⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⠄⠄⠛⣿⣿⣿⣿⣿⣿⡟⠃⢸⡇⠄⠄⠄■\n"
-						+ "■⠄⠄⠄⠄⢻⣧⡜⠛⠛⠛⠛⠛⠄⠄⣿⠄⠄⠄⠛⠛⠛⠛⠃⠄⢠⡜⠃⠄⠄⠄■\n"
-						+ "■⠄⠄⠄⠄⠸⢿⣿⡇⠄⠄⠄⠄⠄⠿⣿⣀⠶⠄⠄⠄⠄⠄⠄⢀⡸⠇⠄⠄⠄⠄■\n"
-						+ "■⠄⠄⠄⠄⠄⠸⢿⣇⡀⠄⠄⠄⠄⠄⣉⠉⠄⠄⠄⠄⠄⠄⢀⡸⠇⠄⠄⠄⠄⠄■\n"
-						+ "■⠄⠄⠄⠄⠄⠄⢸⣿⣇⡀⠄⠰⠶⠶⠿⠶⠶⠶⠶⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄■\n"
-						+ "■⠄⠄⠄⠄⠄⠄⠈⢹⣿⣷⡆⢀⠄⠄⣀⣀⣀⠄⠄⠄⢀⡰⢾⡇⠄⠄⠄⠄⠄⠄■\n"
-						+ "■⠄⠄⠄⠄⠄⠄⠄⢸⣿⣿⣿⣧⠛⣤⣤⣤⠄⠄⠄⣤⡜⠃⢸⡇⠄⠄⠄⠄⠄⠄■\n"
-						+ "■⣤⣤⣤⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⠛⠛⠛⠛⠄⠄⠄⢠⣼⣿⣿⣧⣤⣤⣤■\n"
-						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+				int atkInimigo1_C1 = 20;		
 				
+				System.out.println("----------------------");
+				Print("\n Narração: ao entrar no local, você se vê dois homens estranhos: \n", TimeUnit.MILLISECONDS, temp_narrativa);
+				System.out.println("----------------------");
+				
+				System.out.println("\n"
+						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n"
+						+ "⣿⣿⣿⣿⣿⣿⡟⢣⣤⠛⣤⡜⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⠛⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⠉⠱⢎⣉⠶⣉⡱⠎⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⠉⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⠛⠄⢠⡜⠛⣤⠛⢣⡄⠄⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣤⠛⢻⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⠄⠄⠄⠸⠿⠄⠄⠄⠸⠿⠄⠿⠇⠸⠿⠄⠿⠇⠸⠿⠄⣿⡇⢀⣀⠿⠿⢿⣿⣿⣿⠄⢸⣿⣿⣿\n"
+						+ "⣿⣿⡏⠉⠄⠄⠄⠄⠄⠄⣶⡆⠄⠄⠄⠄⢰⣶⣶⣶⣶⣶⣶⣶⠄⠉⠁⢸⣿⠄⣶⡎⠉⠉⣿⣶⡎⢹⣿⣿\n"
+						+ "⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⢠⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣤⣤⠛⠃⢸⣿⠄⠛⠃⢸⣿⣿\n"
+						+ "⣿⣿⡇⠄⠄⠄⠄⠰⠶⣀⣶⣎⣹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣎⣉⠄⣶⡆⢸⣿⣿\n"
+						+ "⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠄⠛⠃⢸⣿⣿\n"
+						+ "⣿⣿⣿⣿⣀⣀⡀⠄⠄⠄⠄⠄⠄⠄⠿⣀⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⠿⣀⠄⠄⠄⠄⣿⣀⣸⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠉⠁⠄⠄⣶⣶⡆⠄⠄⠄⠄⠄⠄⠄⠉⠄⠄⢰⣶⠉⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⠄⠄⢠⣤⠄⠄⠄⠄⠄⠄⠄⢠⣼⣿⠛⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⣤⣼⣿⣿⠄⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣶⡆⠈⠉⠶⣶⣶⣶⣶⣶⣶⣾⡿⠿⠄⣿⣿⣿⣿⣶⣶⣶⣶⣶⣶⣿⣿⡏⠉⣶⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣿⡟⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣀⣀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣷⣶⠄⠉⢹⣿⣿⣿⣿⣿⣿⣿⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⢱⣾⣿⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠘⢻⣿⣿⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⣿⠿⢿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣿⡿⠿⣉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⣤⡜⢻⣿⣤⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠄⠸⠇⠄⠄⠄⠸⠿⠿⠿⣀⣀⣸⣿⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\n"
+						+ "⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⠉⠁⠄⠄⠄⠉⠉⠉⠉⠉\n"
+						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+				
+				System.out.println("----------------------");
+				Print("\n Bandido 1: Tá fazendo oque aqui rapá? dando mole essas horas no Grajaú fi? \n", TimeUnit.MILLISECONDS, temp_dialog);
+				System.out.println("----------------------");
+				Print("\n Você: Cai fora, não quero confusão. \n", TimeUnit.MILLISECONDS, temp_dialog);
+				System.out.println("----------------------");
+				Print("\n Bandido 2: já arrumou uma parceiro! \n", TimeUnit.MILLISECONDS, temp_dialog);
+				
+				System.out.println("---------------------- \n* Combate Iniciado *");
+				System.out.println("A vida do inimigo é " + vidaInimigo1_C1);
 
-				Boolean correto2 = combat(vidaInimigo1_C1, defInimigo1_C1);
-
+				
+				Boolean correto2 = combat(vidaInimigo1_C1, defInimigo1_C1, atkInimigo1_C1, vidaJogador, defJogador, atkJogador);
+				
 				if (correto2 == true) {
-
+					System.out.println("----------------------");
+					Print("Você encontra outro inimigo a frente... \n", TimeUnit.MILLISECONDS, temp_narrativa);
+					System.out.println("----------------------");
 					int vidaInimigo2_C1 = 10;
 					int defInimigo2_C1 = 0;
-
-					System.out.println("Narração: ");
+					int atkInimigo2_C1 = 20;
+					
+					Print("Narração: \n", TimeUnit.MILLISECONDS, temp_narrativa);
 					System.out.println("----------------------");
 
-					combat(vidaInimigo2_C1, defInimigo2_C1);
+					Boolean correto3 = combat(vidaInimigo2_C1, defInimigo2_C1, atkInimigo2_C1, vidaJogador, defJogador, atkJogador);
 
-					System.out.println("Narração: ");
+					Print("Narração: Ao entrar mais á fundo, você vê uma cena de crime, \n", TimeUnit.MILLISECONDS, temp_narrativa);
+					Print("um corpo de uma vítima dada como desaparecida está em uma cama no canto gélido quarto escuro. \n", TimeUnit.MILLISECONDS, temp_narrativa);
+					Print("você vê um terminal, ele está bloqueado, você precisa hackea-lo \n", TimeUnit.MILLISECONDS, temp_narrativa);
 					System.out.println("----------------------");
-
-					Boolean correto3 = hacking2();
-
+				
 					System.out.println("----------------------");
-					System.out.println("Narração: ");
+					Print("Narração: Ao conseguir os dados, você ouve passos fora do quarto, é o líder daquela gangue! \n", TimeUnit.MILLISECONDS, temp_narrativa);
 					System.out.println("----------------------");
-
+					System.out.println("\n"
+							+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⠿⠿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⢀⣀⣀⣀⣰⣶⣶⣶⣶⣶⣶⣶⣀⣀⣀⣀⣀⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⢠⡜⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⣤⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣀⡀⢸⣿⣀⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢇⣸⣿⣿⣿⡇⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣶⠉⢱⣾⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣷⡆⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛⠄⠘⠛⠛⠛⠛⠛⠛⠛⠛⠄⠘⠛⠛⠛⠛⠛⠃⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠶⢆⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠰⠶⣀⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⠃⠄⣤⣤⡄⠄⠄⠄⠄⠄⠄⠄⠛⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣸⣿⠿⣿⣿⣇⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⣶⡆⢰⣶⣶⠄⢸⣿⣿⠄⣿⣿⣿⣿⣶⠄⢰⣶⣶⣶⣶⣶⡆⠄⣶⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⣤⡜⢻⣿⠛⣤⣼⡇⠄⠄⣿⡟⢻⣿⣿⣤⡜⢻⣿⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠉⢁⡈⠉⣶⣿⣿⣷⣶⣀⣉⣱⣾⣿⣿⣿⣷⣎⣉⣉⣉⡉⢱⣶⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠘⢣⣤⣿⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠸⢇⣀⠿⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⣤⡜⢻⣿⣤⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠉⠉⠹⠿⠿⠿⣉⣉⣱⣶⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
+							"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
+							"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+					
+					System.out.println("---------------------- \n");
+					Print("O Grande Khan: Acha mesmo que pode entrar aqui, atirar nos meus homens e ficar por isso mesmo? HAHAHA \n", TimeUnit.MILLISECONDS, temp_dialog);
+					System.out.println("---------------------- \n* Combate Iniciado *\n ----------------------");
+					
 					if (correto3 == true) {
 
-						int vidaBoss_C1 = 10;
-						int defBoss_C1 = 5;
+						int vidaBoss_C1 = 20;
+						int defBoss_C1 = 2;
+						int atkBoss_C1 = 25;
 
-						Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1);
+						Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1, atkBoss_C1, vidaJogador, defJogador, atkJogador);
 
 						if (Finalizado == true) {
-							System.out.println("Esse caso foi finalizado!");
+							
+							Print("Esse caso foi finalizado! \n", TimeUnit.MILLISECONDS, temp_narrativa);
 							System.out.println("----------------------");
-
+							Print("Você ganhou 5 pontos de vida e 2 de defesa adicionais! \\n Agora você tem 15 pontos de vida e 2 de defesa!", TimeUnit.MILLISECONDS, temp_narrativa);
 							System.out.println("----------------------");
-							System.out.println("Narração: ");
+							
 							System.out.println("----------------------");
-
+							Print("Narração: ", TimeUnit.MILLISECONDS, temp_narrativa);
+							System.out.println("----------------------");
 						}
 					}
 				}
 			}
-
-			Boolean corretog1 = hacking3();
+			
+			//CASO 2 Grajau
+			vidaJogador = 15; //reseta vida e defesa do jogador
+			defJogador = 2;
+			atkJogador = 25;
+			
+			Boolean corretog1 = hacking2();
 			if (corretog1 == true) {
-				int vidaInimigo1_C1 = 10;
-				int defInimigo1_C1 = 0;
+				int vidaInimigo1_C2 = 15;
+				int defInimigo1_C2 = 0;
+				int atkInimigo1_C2 = 20;
 
+				System.out.println("\n"
+						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n"
+						+ "⣿⣿⣿⣿⣿⣿⡟⢣⣤⠛⣤⡜⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⠛⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⠉⠱⢎⣉⠶⣉⡱⠎⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⠉⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⠛⠄⢠⡜⠛⣤⠛⢣⡄⠄⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣤⠛⢻⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⠄⠄⠄⠸⠿⠄⠄⠄⠸⠿⠄⠿⠇⠸⠿⠄⠿⠇⠸⠿⠄⣿⡇⢀⣀⠿⠿⢿⣿⣿⣿⠄⢸⣿⣿⣿\n"
+						+ "⣿⣿⡏⠉⠄⠄⠄⠄⠄⠄⣶⡆⠄⠄⠄⠄⢰⣶⣶⣶⣶⣶⣶⣶⠄⠉⠁⢸⣿⠄⣶⡎⠉⠉⣿⣶⡎⢹⣿⣿\n"
+						+ "⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⢠⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣤⣤⠛⠃⢸⣿⠄⠛⠃⢸⣿⣿\n"
+						+ "⣿⣿⡇⠄⠄⠄⠄⠰⠶⣀⣶⣎⣹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣎⣉⠄⣶⡆⢸⣿⣿\n"
+						+ "⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠄⠛⠃⢸⣿⣿\n"
+						+ "⣿⣿⣿⣿⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠿⣀⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⠿⣀⠄⠄⠄⠄⣿⣀⣸⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠁⠄⠄⣶⣶⡆⠄⠄⠄⠄⠄⠄⠄⠉⠄⠄⢰⣶⠉⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⠄⠄⢠⣤⠄⠄⠄⠄⠄⠄⠄⢠⣼⣿⠛⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⣤⣼⣿⣿⠄⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣶⡆⠈⠉⠶⣶⣶⣶⣶⣶⣶⣾⡿⠿⠄⣿⣿⣿⣿⣶⣶⣶⣶⣶⣶⣿⣿⡏⠉⣶⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣿⡟⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣀⣀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣷⣶⠄⠉⢹⣿⣿⣿⣿⣿⣿⣿⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⢱⣾⣿⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠘⢻⣿⣿⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⣿⠿⢿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣿⡿⠿⣉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⣤⡜⢻⣿⣤⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n"
+						+ "⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠄⠸⠇⠄⠄⠄⠸⠿⠿⠿⣀⣀⣸⣿⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\n"
+						+ "⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⠉⠁⠄⠄⠄⠉⠉⠉⠉⠉\n"
+						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 				System.out.println("----------------------");
-				System.out.println("Narração: ");
-				System.out.println("----------------------");
+				Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
 
-				Boolean corretog2 = combat(vidaInimigo1_C1, defInimigo1_C1);
+				Boolean corretog2 = combat(vidaInimigo1_C2, defInimigo1_C2, atkInimigo1_C2, vidaJogador, defJogador, atkJogador);
 
 				if (corretog2 == true) {
 
-					int vidaInimigo2_C1 = 10;
-					int defInimigo2_C1 = 0;
+					int vidaInimigo2_C2 = 15;
+					int defInimigo2_C2 = 0;
+					int atkInimigo2_C2 = 20;
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
 
-					combat(vidaInimigo2_C1, defInimigo2_C1);
+					Boolean corretog3 = combat(vidaInimigo2_C2, defInimigo2_C2, atkInimigo2_C2, vidaJogador, defJogador, atkJogador);
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
+					
+					System.out.println("\n"
+							+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+							"⣿⣿⣿⣿⣿⣿⡟⢣⣤⠛⣤⡜⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⠛⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠉⠱⢎⣉⠶⣉⡱⠎⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⠉⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⠛⠄⢠⡜⠛⣤⠛⢣⡄⠄⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣤⠛⢻⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⠄⠄⠄⠸⠿⠄⠄⠄⠸⠿⠄⠿⠇⠸⠿⠄⠿⠇⠸⠿⠄⣿⡇⢀⣀⠿⠿⢿⣿⣿⣿⠄⢸⣿⣿⣿\r\n" + 
+							"⣿⣿⡏⠉⠄⠄⠄⠄⠄⠄⣶⡆⠄⠄⠄⠄⢰⣶⣶⣶⣶⣶⣶⣶⠄⠉⠁⢸⣿⠄⣶⡎⠉⠉⣿⣶⡎⢹⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⢠⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣤⣤⠛⠃⢸⣿⠄⠛⠃⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⢀⣀⠶⣀⡸⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠉⣶⣶⣎⣉⠄⣶⡆⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠘⠛⣤⣿⡇⢠⣤⣤⣤⡜⠛⠛⣿⣿⣿⡟⠛⠛⣤⣤⡄⠄⣤⣿⣿⣿⣿⠄⠛⠃⢸⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣀⠄⠄⠸⠿⣀⠿⢇⡀⠄⠄⠿⠿⢿⣿⣿⣿⣿⡿⠿⠿⣀⡀⠄⠄⠿⣿⣿⣿⣿⠿⣀⣸⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⢰⣶⣿⣶⡎⠁⠄⠄⣶⣶⣾⣿⣿⣿⣿⣷⣶⣶⠉⠁⠄⠄⣶⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿⣿⣿⣿⠛⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⠛⢻⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣶⡆⠈⠉⠿⣿⣿⣿⣿⠄⣿⣿⡿⠿⠄⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣿⡏⠉⣶⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⣿⣿⣿⣿⠄⣿⣿⡇⠄⠄⣿⡟⢻⣿⣿⠄⢸⣿⣿⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⠿⠿⢇⣀⣿⣿⣿⣿⣿⣀⣀⣸⣿⣿⣿⣿⣇⡸⠿⠿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣷⣶⠄⠄⢰⣾⣿⣿⣿⣿⣿⣿⠉⣿⣿⣿⣿⣿⣿⣿⣷⣶⣶⠉⢱⣾⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠘⢻⣿⣿⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⣿⠿⢿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣿⡿⠿⣉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⣤⡜⢻⣿⣤⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠄⠸⠇⠄⠄⠄⠸⠿⠿⠿⣀⣀⣸⣿⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
+							"⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⠉⠁⠄⠄⠄⠉⠉⠉⠉⠉"
+							+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+					System.out.println("----------------------");
+					Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
 
-					Boolean corretog3 = hacking4();
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
 
 					if (corretog3 == true) {
+					
+						int vidaBoss_C2 = 25;
+						int defBoss_C2 = 4;
+						int atkBoss_C2 = 25;
 
-						int vidaBoss_C1 = 10;
-						int defBoss_C1 = 5;
-
-						Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1);
+						Boolean Finalizado = combat(vidaBoss_C2, defBoss_C2, atkBoss_C2, vidaJogador, defJogador, atkJogador);
 
 						if (Finalizado == true) {
 							System.out.println("Esse caso foi finalizado!");
+							System.out.println("----------------------");
+							System.out.println("Você ganhou 5 pontos de vida e 2 de defesa adicionais! \n Agora você tem 20 pontos de vida e 4 de defesa!");
 							System.out.println("----------------------");
 
 							System.out.println("----------------------");
@@ -299,64 +388,117 @@ public class cyberNoir {
 					}
 				}
 			}
+			
+			hacking3();
+			
+			hacking4();
 
-			hacking5();
-
-			hacking6();
-
-			hacking7();
-
-			hacking8();
-
-			hacking9();
-
-			Boolean corretogg1 = hacking10();
+			//CASO 3 Grajau
+			vidaJogador = 20; //reseta vida e defesa do jogador
+			defJogador = 4;
+			atkJogador = 30;
+				
+			Boolean corretogg1 = hacking5();
 			if (corretogg1 == true) {
-				int vidaInimigo1_C1 = 10;
-				int defInimigo1_C1 = 0;
-
+				int vidaInimigo1_C3 = 15;
+				int defInimigo1_C3 = 4;
+				int atkInimigo1_C3 = 25;
+				
+				System.out.println("\n"
+						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⠿⠿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⢀⣀⣀⣀⣰⣶⣶⣶⣶⣶⣶⣶⣀⣀⣀⣀⣀⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⢠⡜⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⣤⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣀⡀⢸⣿⣀⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢇⣸⣿⣿⣿⡇⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣶⠉⢱⣾⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣷⡆⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛⠄⠘⠛⠛⠛⠛⠛⠛⠛⠛⠄⠘⠛⠛⠛⠛⠛⠃⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠶⢆⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠰⠶⣀⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⠃⠄⣤⣤⡄⠄⠄⠄⠄⠄⠄⠄⠛⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣸⣿⠿⣿⣿⣇⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⣶⡆⢰⣶⣶⠄⢸⣿⣿⠄⣿⣿⣿⣿⣶⠄⢰⣶⣶⣶⣶⣶⡆⠄⣶⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⣤⡜⢻⣿⠛⣤⣼⡇⠄⠄⣿⡟⢻⣿⣿⣤⡜⢻⣿⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠉⢁⡈⠉⣶⣿⣿⣷⣶⣀⣉⣱⣾⣿⣿⣿⣷⣎⣉⣉⣉⡉⢱⣶⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠘⢣⣤⣿⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠸⢇⣀⠿⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⣤⡜⢻⣿⣤⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠉⠉⠹⠿⠿⠿⣉⣉⣱⣶⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
+						"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
+						"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+				System.out.println("----------------------");
+				Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
+				
 				System.out.println("----------------------");
 				System.out.println("Narração: ");
 				System.out.println("----------------------");
 
-				Boolean corretogg2 = combat(vidaInimigo1_C1, defInimigo1_C1);
+				Boolean corretogg2 = combat(vidaInimigo1_C3, defInimigo1_C3, atkInimigo1_C3, vidaJogador, defJogador, atkJogador);
 
 				if (corretogg2 == true) {
 
-					int vidaInimigo2_C1 = 10;
-					int defInimigo2_C1 = 0;
+					int vidaInimigo2_C3 = 15;
+					int defInimigo2_C3 = 4;
+					int atkInimigo2_C3 = 25;
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
 
-					combat(vidaInimigo2_C1, defInimigo2_C1);
+					Boolean corretogg3 = combat(vidaInimigo2_C3, defInimigo2_C3, atkInimigo2_C3, vidaJogador, defJogador, atkJogador );
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
 
-					Boolean corretogg3 = hacking11();
-
+					System.out.println("\n"
+							+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\r\n" + 
+							"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⠛⢣⡜⠛⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⢸⣿⣿\r\n" + 
+							"⣿⣿⣷⣶⣶⠄⠄⠄⠄⠶⣉⡹⢏⣉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣶⣶⣾⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣤⠛⢣⡜⠛⣿⠛⢻⡟⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠸⠿⠄⠿⢇⡸⠿⠄⠿⢿⣇⣀⣀⠿⠿⠿⠿⠿⠿⢇⣸⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠄⣶⡎⢹⣿⣿⣶⣶⣶⣶⠄⠄⠈⠉⠉⣶⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣤⠛⣿⣿⡇⠄⣤⣤⣤⣤⣤⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⢈⣉⠶⣿⡿⢇⣀⣿⠿⢏⣹⣿⠿⣿⡏⢱⣶⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⠄⠄⠘⠛⠄⠛⠃⢸⣿⠛⣤⣼⡟⠛⣤⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⡀⠸⠿⣿⣿⣇⣸⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
+							"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
+							"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+					System.out.println("----------------------");
+					Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
+					
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
 
 					if (corretogg3 == true) {
 
-						int vidaBoss_C1 = 10;
-						int defBoss_C1 = 5;
+						int vidaBoss_C3 = 35;
+						int defBoss_C3 = 4;
+						int atkBoss_C3 = 35;
 
-						Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1);
+						Boolean Finalizado = combat(vidaBoss_C3, defBoss_C3, atkBoss_C3, vidaJogador, defJogador, atkJogador);
 
 						if (Finalizado == true) {
 							System.out.println("Esse caso foi finalizado!");
+							System.out.println("----------------------");
+							System.out.println("Você ganhou 5 pontos de vida e 2 de defesa adicionais! \n Agora você tem 25 pontos de vida e 6 de defesa!");
 							System.out.println("----------------------");
 
 							System.out.println("----------------------");
 							System.out.println("Narração: ");
 							System.out.println("----------------------");
-
 						}
 					}
 				}
@@ -370,44 +512,98 @@ public class cyberNoir {
 
 		return opcaoG;
 	}
+	
+	//casos taboao
 
-	static int controleTaboao() {
+	static int controleTaboao() throws Exception{
 
 		int opcaoT = taboao();
 
 		Boolean sair = false;
-		
-		Boolean Finalizado = false;
 
 		do {
+			int vidaJogador = 25, defJogador = 6, atkJogador = 35; //declaração da vida e defesa do jogador
+			//CASO 1 TABOAO
 
-			Boolean correto1 = hacking12();
+			Boolean correto1 = hacking6();
 			if (correto1 == true) {
-				int vidaInimigo1_C1 = 10;
-				int defInimigo1_C1 = 0;
+				int vidaInimigo1_C4 = 20;
+				int defInimigo1_C4 = 6;
+				int atkInimigo1_C4 = 35;
+				
+				System.out.println("\n"
+						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+						"⣿⣿⣿⣿⣿⣿⡟⢣⣤⠛⣤⡜⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⠛⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠉⠱⢎⣉⠶⣉⡱⠎⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⠉⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⠛⠄⢠⡜⠛⣤⠛⢣⡄⠄⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣤⠛⢻⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⠄⠄⠄⠸⠿⠄⠄⠄⠸⠿⠄⠿⠇⠸⠿⠄⠿⠇⠸⠿⠄⣿⡇⢀⣀⠿⠿⢿⣿⣿⣿⠄⢸⣿⣿⣿\r\n" + 
+						"⣿⣿⡏⠉⠄⠄⠄⠄⠄⠄⣶⡆⠄⠄⠄⠄⢰⣶⣶⣶⣶⣶⣶⣶⠄⠉⠁⢸⣿⠄⣶⡎⠉⠉⣿⣶⡎⢹⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⢠⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣤⣤⠛⠃⢸⣿⠄⠛⠃⢸⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⢀⣀⠶⣀⡸⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠉⣶⣶⣎⣉⠄⣶⡆⢸⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠘⠛⣤⣿⡇⢠⣤⣤⣤⡜⠛⠛⣿⣿⣿⡟⠛⠛⣤⣤⡄⠄⣤⣿⣿⣿⣿⠄⠛⠃⢸⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣀⠄⠄⠸⠿⣀⠿⢇⡀⠄⠄⠿⠿⢿⣿⣿⣿⣿⡿⠿⠿⣀⡀⠄⠄⠿⣿⣿⣿⣿⠿⣀⣸⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⢰⣶⣿⣶⡎⠁⠄⠄⣶⣶⣾⣿⣿⣿⣿⣷⣶⣶⠉⠁⠄⠄⣶⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿⣿⣿⣿⠛⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⠛⢻⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣶⡆⠈⠉⠿⣿⣿⣿⣿⠄⣿⣿⡿⠿⠄⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣿⡏⠉⣶⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⣿⣿⣿⣿⠄⣿⣿⡇⠄⠄⣿⡟⢻⣿⣿⠄⢸⣿⣿⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⠿⠿⢇⣀⣿⣿⣿⣿⣿⣀⣀⣸⣿⣿⣿⣿⣇⡸⠿⠿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣷⣶⠄⠄⢰⣾⣿⣿⣿⣿⣿⣿⠉⣿⣿⣿⣿⣿⣿⣿⣷⣶⣶⠉⢱⣾⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠘⢻⣿⣿⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⣿⠿⢿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣿⡿⠿⣉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⣤⡜⢻⣿⣤⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠄⠸⠇⠄⠄⠄⠸⠿⠿⠿⣀⣀⣸⣿⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
+						"⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⠉⠁⠄⠄⠄⠉⠉⠉⠉⠉"
+						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+				System.out.println("----------------------");
+				Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
 
 				System.out.println("----------------------");
 				System.out.println("Narração: ");
 				System.out.println("----------------------");
 
-				Boolean correto2 = combat(vidaInimigo1_C1, defInimigo1_C1);
+				Boolean correto2 = combat(vidaInimigo1_C4, defInimigo1_C4, atkInimigo1_C4, vidaJogador, defJogador, atkJogador);
 
 				if (correto2 == true) {
 
-					int vidaInimigo2_C1 = 10;
-					int defInimigo2_C1 = 0;
+					int vidaInimigo2_C4 = 20;
+					int defInimigo2_C4 = 6;
+					int atkInimigo2_C4 = 35;
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
 
-					combat(vidaInimigo2_C1, defInimigo2_C1);
+					Boolean correto3 = combat(vidaInimigo2_C4, defInimigo2_C4, atkInimigo2_C4, vidaJogador, defJogador, atkJogador);
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
-
-					Boolean correto3 = hacking13();
+					
+					System.out.println("\n"
+							+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\r\n" + 
+							"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⠛⢣⡜⠛⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⢸⣿⣿\r\n" + 
+							"⣿⣿⣷⣶⣶⠄⠄⠄⠄⠶⣉⡹⢏⣉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣶⣶⣾⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣤⠛⢣⡜⠛⣿⠛⢻⡟⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠸⠿⠄⠿⢇⡸⠿⠄⠿⢿⣇⣀⣀⠿⠿⠿⠿⠿⠿⢇⣸⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠄⣶⡎⢹⣿⣿⣶⣶⣶⣶⠄⠄⠈⠉⠉⣶⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣤⠛⣿⣿⡇⠄⣤⣤⣤⣤⣤⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⢈⣉⠶⣿⡿⢇⣀⣿⠿⢏⣹⣿⠿⣿⡏⢱⣶⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⠄⠄⠘⠛⠄⠛⠃⢸⣿⠛⣤⣼⡟⠛⣤⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⡀⠸⠿⣿⣿⣇⣸⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
+							"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
+							"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+					System.out.println("----------------------");
+					Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
@@ -415,13 +611,16 @@ public class cyberNoir {
 
 					if (correto3 == true) {
 
-						int vidaBoss_C1 = 10;
-						int defBoss_C1 = 5;
+						int vidaBoss_C4 = 50;
+						int defBoss_C4 = 8;
+						int atkBoss_C4 = 35;
 
-						Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1);
+						Boolean Finalizado = combat(vidaBoss_C4, defBoss_C4, atkBoss_C4, vidaJogador, defJogador, atkJogador );
 
 						if (Finalizado == true) {
 							System.out.println("Esse caso foi finalizado!");
+							System.out.println("----------------------");
+							System.out.println("Você ganhou 5 pontos de vida e 2 de defesa adicionais! \n Agora você tem 30 pontos de vida e 8 de defesa!");
 							System.out.println("----------------------");
 
 							System.out.println("----------------------");
@@ -432,44 +631,95 @@ public class cyberNoir {
 					}
 				}
 			}
+
+			hacking7();
+
+			hacking8();
+
+			//CASO 2 TABOAO
+			vidaJogador = 30; //reseta vida e defesa do jogador
+			defJogador = 8;
+			atkJogador = 40;
 			
-			Finalizado = true;
-			
-		} while (!Finalizado);
-
-			hacking14();
-
-			hacking15();
-
-			hacking16();
-
-			Boolean corretot1 = hacking17();
+			Boolean corretot1 = hacking9();
 			if (corretot1 == true) {
-				int vidaInimigo1_C1 = 10;
-				int defInimigo1_C1 = 0;
+				int vidaInimigo1_C5 = 25;
+				int defInimigo1_C5 = 6;
+				int atkInimigo1_C5 = 35;
+				
+				System.out.println("\n"
+						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\r\n" + 
+						"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⠛⢣⡜⠛⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⢸⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⢸⣿⣿\r\n" + 
+						"⣿⣿⣷⣶⣶⠄⠄⠄⠄⠶⣉⡹⢏⣉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣶⣶⣾⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣤⠛⢣⡜⠛⣿⠛⢻⡟⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠸⠿⠄⠿⢇⡸⠿⠄⠿⢿⣇⣀⣀⠿⠿⠿⠿⠿⠿⢇⣸⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠄⣶⡎⢹⣿⣿⣶⣶⣶⣶⠄⠄⠈⠉⠉⣶⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣤⠛⣿⣿⡇⠄⣤⣤⣤⣤⣤⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⢈⣉⠶⣿⡿⢇⣀⣿⠿⢏⣹⣿⠿⣿⡏⢱⣶⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⠄⠄⠘⠛⠄⠛⠃⢸⣿⠛⣤⣼⡟⠛⣤⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⡀⠸⠿⣿⣿⣇⣸⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
+						"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
+						"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+				System.out.println("----------------------");
+				Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
 
 				System.out.println("----------------------");
 				System.out.println("Narração: ");
 				System.out.println("----------------------");
 
-				Boolean corretot2 = combat(vidaInimigo1_C1, defInimigo1_C1);
+				Boolean corretot2 = combat(vidaInimigo1_C5, defInimigo1_C5, atkInimigo1_C5, vidaJogador, defJogador, atkJogador);
 
 				if (corretot2 == true) {
 
-					int vidaInimigo2_C1 = 10;
-					int defInimigo2_C1 = 0;
+					int vidaInimigo2_C5 = 25;
+					int defInimigo2_C5 = 6;
+					int atkInimigo2_C5 = 35;
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
 
-					combat(vidaInimigo2_C1, defInimigo2_C1);
+					Boolean corretot3 =combat(vidaInimigo2_C5, defInimigo2_C5, atkInimigo2_C5, vidaJogador, defJogador, atkJogador);
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
-
-					Boolean corretot3 = hacking18();
+					
+					System.out.println("\n"
+							+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\r\n" + 
+							"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⠛⢣⡜⠛⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⢸⣿⣿\r\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⢸⣿⣿\r\n" + 
+							"⣿⣿⣷⣶⣶⠄⠄⠄⠄⠶⣉⡹⢏⣉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣶⣶⣾⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣤⠛⢣⡜⠛⣿⠛⢻⡟⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠸⠿⠄⠿⢇⡸⠿⠄⠿⢿⣇⣀⣀⠿⠿⠿⠿⠿⠿⢇⣸⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠄⣶⡎⢹⣿⣿⣶⣶⣶⣶⠄⠄⠈⠉⠉⣶⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣤⠛⣿⣿⡇⠄⣤⣤⣤⣤⣤⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⢈⣉⠶⣿⡿⢇⣀⣿⠿⢏⣹⣿⠿⣿⡏⢱⣶⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⠄⠄⠘⠛⠄⠛⠃⢸⣿⠛⣤⣼⡟⠛⣤⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⡀⠸⠿⣿⣿⣇⣸⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
+							"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
+							"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+					System.out.println("----------------------");
+					Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
@@ -477,13 +727,16 @@ public class cyberNoir {
 
 					if (corretot3 == true) {
 
-						int vidaBoss_C1 = 10;
-						int defBoss_C1 = 5;
+						int vidaBoss_C5 = 60;
+						int defBoss_C5 = 8;
+						int atkBoss_C5 = 45;
 
-						Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1);
+						Boolean Finalizado = combat(vidaBoss_C5, defBoss_C5, atkBoss_C5, vidaJogador, defJogador, atkJogador);
 
 						if (Finalizado == true) {
 							System.out.println("Esse caso foi finalizado!");
+							System.out.println("----------------------");
+							System.out.println("Você ganhou 5 pontos de vida e 2 de defesa adicionais! \n Agora você tem 35 pontos de vida e 10 de defesa!");
 							System.out.println("----------------------");
 
 							System.out.println("----------------------");
@@ -494,52 +747,110 @@ public class cyberNoir {
 					}
 				}
 			}
-
-			hacking19();
-
-			hacking20();
-
-			Boolean corretott1 = hacking21();
+			
+			//CASO 3 TABOAO
+			vidaJogador = 35; //reseta vida e defesa do jogador
+			defJogador = 10;
+			atkJogador = 40;
+			
+			Boolean corretott1 = hacking10();
 			if (corretott1 == true) {
-				int vidaInimigo1_C1 = 10;
-				int defInimigo1_C1 = 0;
+				int vidaInimigo1_C6 = 30;
+				int defInimigo1_C6 = 6;
+				int atkInimigo1_C6 = 35;
+				
+				System.out.println("\n"
+						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\r\n" + 
+						"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⠛⢣⡜⠛⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⢸⣿⣿\r\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⢸⣿⣿\r\n" + 
+						"⣿⣿⣷⣶⣶⠄⠄⠄⠄⠶⣉⡹⢏⣉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣶⣶⣾⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣤⠛⢣⡜⠛⣿⠛⢻⡟⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠸⠿⠄⠿⢇⡸⠿⠄⠿⢿⣇⣀⣀⠿⠿⠿⠿⠿⠿⢇⣸⣿⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠄⣶⡎⢹⣿⣿⣶⣶⣶⣶⠄⠄⠈⠉⠉⣶⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣤⠛⣿⣿⡇⠄⣤⣤⣤⣤⣤⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⢈⣉⠶⣿⡿⢇⣀⣿⠿⢏⣹⣿⠿⣿⡏⢱⣶⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⠄⠄⠘⠛⠄⠛⠃⢸⣿⠛⣤⣼⡟⠛⣤⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⡀⠸⠿⣿⣿⣇⣸⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
+						"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
+						"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+				System.out.println("----------------------");
+				Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
 
 				System.out.println("----------------------");
 				System.out.println("Narração: ");
 				System.out.println("----------------------");
-
-				Boolean corretott2 = combat(vidaInimigo1_C1, defInimigo1_C1);
+				
+				Boolean corretott2 = combat(vidaInimigo1_C6, defInimigo1_C6, atkInimigo1_C6, vidaJogador, defJogador, atkJogador);
 
 				if (corretott2 == true) {
 
-					int vidaInimigo2_C1 = 10;
-					int defInimigo2_C1 = 0;
+					int vidaInimigo2_C6 = 30;
+					int defInimigo2_C6 = 6;
+					int atkInimigo2_C6 = 35;
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
 
-					combat(vidaInimigo2_C1, defInimigo2_C1);
+					Boolean corretott3 = combat(vidaInimigo2_C6, defInimigo2_C6, atkInimigo2_C6, vidaJogador, defJogador, atkJogador);
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
-
-					Boolean corretott3 = hacking22();
 
 					System.out.println("----------------------");
 					System.out.println("Narração: ");
 					System.out.println("----------------------");
 
 					if (corretott3 == true) {
+						
+						System.out.println("\n"
+								+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⢇⡀⠄⣀⣀⣀⣀⣀⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⠉⢱⣶⠄⣶⡎⢱⣶⠉⣿⣿⣿⣿⣶⣶⣶⡎⠉⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⡟⠛⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⣿⣿⡏⠁⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡎⠉⣿⣿⣿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠛⢣⡜⠛⣤⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣤⠛⣿⣿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⠿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡸⠿⣀⠿⢿⣿⣿⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⠄⠿⢿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⢰⣶⣶⠄⠈⢱⣶⠉⣶⣾⣿⣿⠉⣶⣶⡎⠉⠉⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⣤⣼⣿⣿⣿⣿⡇⢠⣤⠛⣤⣼⡇⠄⣿⣿⣿⣿⣿⣤⠛⢻⣿⣿⠄⠄⢸⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠿⢿⣿⣿⣿⠿⠇⠈⠉⠶⣉⣹⣇⣀⠿⣿⣿⣿⣿⠿⣀⣸⣿⣿⠄⠄⢸⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠘⠛⠛⠛⠄⠄⠄⠄⣤⠛⢻⣿⣿⣤⠛⠛⠛⠛⣤⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⠄⣿⣿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⣿⣀⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣾⣿⣿⣿⡿⠏⠉⣉⠉⠉⠁⠄⣀⣿⣿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⢻⣿⣿⠛⠛⠃⢠⣤⣿⠄⠄⢠⣤⣿⣿⣿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣇⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡿⠿⠄⠄⢀⣸⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣾⡇⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⢠⣤⠄⣤⣤⣤⣤⣿⠛⢣⣼⣿⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣀⡀⠈⠉⠶⠉⠹⠿⠿⣉⠄⢸⣿⣿⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠛⢣⡄⠄⠄⣤⡄⢠⣤⣿⠄⢸⣿⣿⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+								"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+						System.out.println("----------------------");
+					
+						
+						Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
 
-						int vidaBoss_C1 = 10;
-						int defBoss_C1 = 5;
-
-						Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1);
+						int vidaBoss_C6 = 70;
+						int defBoss_C6 = 8;
+						int atkBoss_C6 = 50;
+						
+						Boolean Finalizado = combat(vidaBoss_C6, defBoss_C6, atkBoss_C6, vidaJogador, defJogador, atkJogador);
 
 						if (Finalizado == true) {
 							System.out.println("Esse caso foi finalizado!");
+							System.out.println("----------------------");
+							System.out.println("Você ganhou 5 pontos de vida e 2 de defesa adicionais! \n Agora você tem 40 pontos de vida e 12 de defesa!");
 							System.out.println("----------------------");
 
 							System.out.println("----------------------");
@@ -560,51 +871,13 @@ public class cyberNoir {
 		return opcaoT;
 	}
 
-	static Boolean hacking1() {
-
-		int resultado, resposta = 3;
-
-		Boolean correto = false;
-
-		System.out.println("----------------------");
-		System.out.println(" - Porta trancada - ");
-		System.out.println("Resolve o desafio abaixo para abrir");
-		System.out.println("----------------------");
-
-		do {
-
-			System.out.println("Desafio: Qual o comando que printa e pula linha no Java?");
-
-			respostah1.add("Sys.out.print(“TESTE”);");
-			respostah1.add("System.out.printf(“TESTE”);");
-			respostah1.add("System.out.println(“TESTE”);"); // Correta
-
-			System.out.println("\nSys***.out.*******(“TESTE”); ");
-			System.out.println("");
-			System.out.println("int nomeArray [] = *** *** [*]; ");
-			System.out.println("");
-			System.out.println("1 - " + respostah1.get(0));
-			System.out.println("2 - " + respostah1.get(1));
-			System.out.println("3 - " + respostah1.get(2));
-			System.out.println("----------------------");
-
-			resultado = input.nextInt();
-
-		} while (resultado != resposta);
-		if (resultado == resposta) {
-			System.out.println("----------------------");
-			System.out.println("Porta aberta. Seguindo em frente >>>");
-			correto = true;
-		}
-		return correto;
-	}
-
-	static Boolean combat(float vidaInimigo, float defInimigo) {
+	//Função combate 
+	static Boolean combat( double vidaInimigo, float defInimigo, int atkInimigo, double vidaJogador, float defJogador, int atkJogador) throws Exception {
 
 		// vida e defesa do inimigo
-
-		int escolhaAtk = 0, escolhaAtkI = 0;
-		double atkJ, atkI, vidaJogador = 10, defJogador = 10;
+		double vidaJogadorBckp = vidaJogador, vidaInimigoBckp = vidaInimigo;
+		int escolhaAtk = 0;
+		double atkJ, atkI;
 
 		Random dado = new Random();
 
@@ -621,13 +894,13 @@ public class cyberNoir {
 
 			switch (escolhaAtk) {
 			case (1):
-				atkJ = dado.nextInt(8) + dado.nextInt(8); // pistola 9mm
+				atkJ = dado.nextInt(atkJogador) + dado.nextInt(8); // pistola 9mm
 
 			case (2):
-				atkJ = dado.nextInt(6) + dado.nextInt(6) + dado.nextInt(6); // corpo á corpo
+				atkJ = dado.nextInt(atkJogador) + dado.nextInt(6) + dado.nextInt(6); // corpo á corpo
 
 			default:
-				atkJ = dado.nextInt(20); // faca
+				atkJ = dado.nextInt(atkJogador); // faca
 			}
 
 			// defesa do inimigo contra o jogador
@@ -666,19 +939,8 @@ public class cyberNoir {
 			// ataque do inimigo
 
 			// escolha do ataque do inimigo
-			escolhaAtkI = dado.nextInt(2);
-
-			switch (escolhaAtkI) {
-			case (0):
-				atkI = dado.nextInt(20); // pistola 9mm
-
-			case (1):
-				atkI = dado.nextInt(6) + dado.nextInt(6) + dado.nextInt(6); // corpo ï¿½ corpo
-
-			default:
-				atkI = dado.nextInt(8) + dado.nextInt(8); // faca
-			}
-
+			atkI = dado.nextInt(atkInimigo);
+					
 			// defesa do jogador contra inimigo
 			atkI = atkI - (defJogador * 0.5);
 
@@ -705,7 +967,8 @@ public class cyberNoir {
 			if (vidaJogador <= 0) {
 				System.out.println("Você Morreu!");
 				System.out.println("----------------------");
-				break;
+				vidaJogador = vidaJogadorBckp;
+				vidaInimigo = vidaInimigoBckp;
 			}
 
 		} while (vidaInimigo > 0 || vidaJogador > 0);
@@ -713,9 +976,51 @@ public class cyberNoir {
 		return combateFim;
 
 	}
+	
+	static Boolean hacking1() throws Exception {
+		ArrayList<String> respostah1 = new ArrayList<String>();
+		
+		int resultado, resposta = 2;
 
-	static Boolean hacking2() {
+		Boolean correto = false;
+		
+		System.out.println("- Virus -");
+		System.out.println("Resolva o desafio abaixo para prosseguir");
+		System.out.println("----------------------");
 
+		do {
+
+			respostah1.add("(),()");
+			respostah1.add("[],[]"); // Correta
+			respostah1.add("[],()");
+			respostah1.add("(),[]"); 
+
+			System.out.println("Desafio: O que falta na criação do vetor abaixo?");
+			System.out.println("");
+			System.out.println("int ** vetor = new int **");
+			System.out.println("");
+			System.out.println("1 - " + respostah1.get(0));
+			System.out.println("2 - " + respostah1.get(1));
+			System.out.println("3 - " + respostah1.get(2));
+			System.out.println("4 - " + respostah1.get(3));
+			System.out.println("----------------------");
+			resultado = input.nextInt();
+
+		} while (resultado != resposta);	
+		if (resultado == resposta) {
+			System.out.println("----------------------");
+			System.out.println("Virus limpo. Seguindo em frente >>>");
+			correto = true;
+
+		}
+
+		return correto;
+	}
+
+	static Boolean hacking2() throws Exception {
+		
+		ArrayList<String> respostah2 = new ArrayList<String>();
+		
 		int resposta = 1, resultado;
 
 		Boolean correto = false;
@@ -725,31 +1030,29 @@ public class cyberNoir {
 		System.out.println("----------------------");
 
 		do {
-
 			System.out.println("Desafio: Encontre a obstrução na matriz: ");
-
 			System.out.println("\nMatriz\n" + 
 					"\n######################################################\r\n"
-					+ "#⠄⠄⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⢠⣶⣆⠄⠄⠄⢸⠄⠄⢰⡶⠶⢶⣆⠄⠄⢸⠄⠄⢀⣴⡶⠶⢶⠄⠄⡇⠄⠄⣶⠶⠶⣶⣄⠄ #\r\n"
-					+ "#⠄⠄⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⣾⠁⢿⡄⠄⠄⢸⠄⠄⢸⣇⣀⣠⠟⠄⠄⢸⠄⠄⣾⡏⠄⠄⠄⠄⠄⡇⠄⠄⣿⠄⠄⠄⢹⡇ #\r\n"
-					+ "#⠄⠄⠄⠄⠄⠄⠄⢸⠄⠄⠄⣾⣧⣤⣼⣿⡄⠄⢸⠄⠄⢸⡏⠉⠉⣿⡆⠄⢸⠄⠄⢿⣇⠄⠄⠄⠄⠄⡇⠄⠄⣿⠄⠄⠄⣸⡇ #\r\n"
-					+ "#⠄⠄⠄⠄⠄⠄⠄⢸⠄⠄⠸⠿⠄⠄⠄⠻⠧⠄⢸⠄⠄⠸⠷⠶⠶⠟⠁⠄⢸⠄⠄⠘⠿⠶⠶⠶⠄⠄⡇⠄⠄⠿⠶⠶⠾⠛⠁ #\r\n"
-					+ "#⠒⠒⠒⠒⠒⠒⠒⢸⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⢺⠒⠒⠒⠒⠒⠒⠒⠒⠒⢺⠒⠒⠒⠒⠒⠒⠒⠒⠒⡗⠒⠒⠒⠒⠒⠒⠒⠒⠒#\r\n"
-					+ "#⠄⠄⠄⢠⡄⠄⠄⢸⠄⠄⠄⠄⢀⣤⣄⠄⠄⠄⢸⠄⠄⠄⢀⣤⣤⡀⠄⠄⢸⠄⠄⠄⣀⣤⣄⠄⠄⠄⡇⠄⠄⠄⢀⣤⣄⠄⠄⠄#\r\n"
-					+ "#⠄⠄⠚⢹⡇⠄⠄⢸⠄⠄⠄⣰⡟⠉⠹⣿⠄⠄⢸⠄⠄⢰⡟⠉⠉⣿⠄⠄⢸⠄⠄⣼⠟⠉⢹⣧⠄⠄⡇⠄⠄⢰⡟⠉⢹⣷⠄⠄#\r\n"
-					+ "#⠄⠄⠄⢸⡇⠄⠄⢸⠄⠄⠄⣿⡇⠄⠄⣿⠇⠄⢸⠄⠄⢸⡇⠄⠄⣿⠇⠄⢸⠄⠄⣿⠄⠄⢸⣿⠄⠄⡇⠄⠄⢿⡇⠄⢸⣿⠄⠄#\r\n"
-					+ "#⠄⠄⣀⣸⣇⣀⠄⢸⠄⠄⠄⠹⣧⣀⣸⡿⠄⠄⢸⠄⠄⠸⣧⣀⣠⡿⠄⠄⢸⠄⠄⢻⣧⣀⣸⠏⠄⠄⡇⠄⠄⠸⣧⣀⣸⡿⠄⠄#\r\n"
-					+ "#⣀⣀⣀⣀⣀⣀⣀⢸⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣸⣀⣀⣀⣀⣀⣀⣀⣀⣀⣸⣀⣀⣀⣀⣀⣀⣀⣀⣀⣇⣀⣀⣀⣀⣀⣀⣀⣀⣀#\r\n"
-					+ "#⠄⠰⠟⠛⢿⣆⠄⢸⠄⠄⠄⢀⣾⠛⢻⣦⠄⠄⢸⠄⠄⢀⣾⠛⠻⣧⠄⠄⢸⠄⠄⣠⡿⠛⢿⡄⠄⠄⡇⠄⠄⢠⡾⠛⢻⣦⠄⠄#\r\n"
-					+ "#⠄⠄⠄⢀⣾⠏⠄⢸⠄⠄⠄⣿⡇⠄⠄⣿⡆⠄⢸⠄⠄⢸⡇⠄⠄⣿⡆⠄⢸⠄⠄⣿⠄⠄⢸⣿⠄⠄⡇⠄⠄⣼⡇⠄⢸⣿⠄⠄#\r\n"
-					+ "#⠄⠄⣴⡟⠁⠄⠄⢸⠄⠄⠄⢿⣇⠄⢠⣿⠁⠄⢸⠄⠄⢸⣇⠄⠄⣿⠁⠄⢸⠄⠄⣿⡄⠄⢸⡟⠄⠄⡇⠄⠄⢹⡇⠄⢸⣿⠄⠄#\r\n"
-					+ "#⠄⠘⠛⠛⠛⠛⠄⢸⠄⠄⠄⠄⠛⠲⠛⠁⠄⠄⢸⠄⠄⠄⠛⠲⠚⠋⠄⠄⢸⠄⠄⠈⠛⠶⠛⠁⠄⠄⡇⠄⠄⠈⠛⠶⠛⠁⠄⠄#\r\n"
-					+ "#⠉⠉⠉⠉⠉⠉⠉⢸⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⢹⠉⠉⠉⠉⠉⠉⠉⠉⠉⢹⠉⠉⠉⠉⠉⠉⠉⠉⠉⡏⠉⠉⠉⠉⠉⠉⠉⠉⠉#\r\n"
-					+ "#⠄⢠⣴⣶⣦⡄⠄⢸⠄⠄⠄⠄⣤⣶⣦⡄⠄⠄⢸⠄⠄⠄⣤⣶⣶⣄⠄⠄⢸⠄⠄⢀⣤⣶⣦⡀⠄⠄⡇⠄⠄⠄⢠⣴⡆⠄⠄⠄#\r\n"
-					+ "#⠄⠈⠄⢀⣸⠇⠄⢸⠄⠄⠄⣼⡏⠄⠘⣿⡀⠄⢸⠄⠄⢸⡏⠄⠄⣿⡀⠄⢸⠄⠄⣾⠋⠄⢸⣷⠄⠄⡇⠄⠄⠄⠉⣿⡇⠄⠄⠄#\r\n"
-					+ "#⠄⠄⠉⠉⢻⣦⠄⢸⠄⠄⠄⣿⡇⠄⠄⣿⠃⠄⢸⠄⠄⢸⡇⠄⠄⣿⠃⠄⢸⠄⠄⣿⡀⠄⢸⣿⠄⠄⡇⠄⠄⠄⠄⣿⡇⠄⠄⠄#\r\n"
-					+ "#⠄⠠⣤⣤⣼⠟⠄⢸⠄⠄⠄⠘⢿⣤⡼⠟⠄⠄⢸⠄⠄⠘⢿⣤⣴⠟⠄⠄⢸⠄⠄⠹⣷⣤⡼⠃⠄⠄⡇⠄⠄⠄⣤⣿⣧⣤⠄⠄#\r\n"
-					+ "######################################################\n");
+					+ "⠄⠄⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⢠⣶⣆⠄⠄⠄⢸⠄⠄⢰⡶⠶⢶⣆⠄⠄⢸⠄⠄⢀⣴⡶⠶⢶⠄⠄⡇⠄⠄⣶⠶⠶⣶⣄⠄ #\r\n"
+					+ "⠄⠄⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⣾⠁⢿⡄⠄⠄⢸⠄⠄⢸⣇⣀⣠⠟⠄⠄⢸⠄⠄⣾⡏⠄⠄⠄⠄⠄⡇⠄⠄⣿⠄⠄⠄⢹⡇ #\r\n"
+					+ "⠄⠄⠄⠄⠄⠄⠄⢸⠄⠄⠄⣾⣧⣤⣼⣿⡄⠄⢸⠄⠄⢸⡏⠉⠉⣿⡆⠄⢸⠄⠄⢿⣇⠄⠄⠄⠄⠄⡇⠄⠄⣿⠄⠄⠄⣸⡇ #\r\n"
+					+ "⠄⠄⠄⠄⠄⠄⠄⢸⠄⠄⠸⠿⠄⠄⠄⠻⠧⠄⢸⠄⠄⠸⠷⠶⠶⠟⠁⠄⢸⠄⠄⠘⠿⠶⠶⠶⠄⠄⡇⠄⠄⠿⠶⠶⠾⠛⠁ #\r\n"
+					+ "⠒⠒⠒⠒⠒⠒⠒⢸⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⢺⠒⠒⠒⠒⠒⠒⠒⠒⠒⢺⠒⠒⠒⠒⠒⠒⠒⠒⠒⡗⠒⠒⠒⠒⠒⠒⠒⠒⠒#\r\n"
+					+ "⠄⠄⠄⢠⡄⠄⠄⢸⠄⠄⠄⠄⢀⣤⣄⠄⠄⠄⢸⠄⠄⠄⢀⣤⣤⡀⠄⠄⢸⠄⠄⠄⣀⣤⣄⠄⠄⠄⡇⠄⠄⠄⢀⣤⣄⠄⠄⠄#\r\n"
+					+ "⠄⠄⠚⢹⡇⠄⠄⢸⠄⠄⠄⣰⡟⠉⠹⣿⠄⠄⢸⠄⠄⢰⡟⠉⠉⣿⠄⠄⢸⠄⠄⣼⠟⠉⢹⣧⠄⠄⡇⠄⠄⢰⡟⠉⢹⣷⠄⠄#\r\n"
+					+ "⠄⠄⠄⢸⡇⠄⠄⢸⠄⠄⠄⣿⡇⠄⠄⣿⠇⠄⢸⠄⠄⢸⡇⠄⠄⣿⠇⠄⢸⠄⠄⣿⠄⠄⢸⣿⠄⠄⡇⠄⠄⢿⡇⠄⢸⣿⠄⠄#\r\n"
+					+ "⠄⠄⣀⣸⣇⣀⠄⢸⠄⠄⠄⠹⣧⣀⣸⡿⠄⠄⢸⠄⠄⠸⣧⣀⣠⡿⠄⠄⢸⠄⠄⢻⣧⣀⣸⠏⠄⠄⡇⠄⠄⠸⣧⣀⣸⡿⠄⠄#\r\n"
+					+ "⣀⣀⣀⣀⣀⣀⣀⢸⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣸⣀⣀⣀⣀⣀⣀⣀⣀⣀⣸⣀⣀⣀⣀⣀⣀⣀⣀⣀⣇⣀⣀⣀⣀⣀⣀⣀⣀⣀#\r\n"
+					+ "⠄⠰⠟⠛⢿⣆⠄⢸⠄⠄⠄⢀⣾⠛⢻⣦⠄⠄⢸⠄⠄⢀⣾⠛⠻⣧⠄⠄⢸⠄⠄⣠⡿⠛⢿⡄⠄⠄⡇⠄⠄⢠⡾⠛⢻⣦⠄⠄#\r\n"
+					+ "⠄⠄⠄⢀⣾⠏⠄⢸⠄⠄⠄⣿⡇⠄⠄⣿⡆⠄⢸⠄⠄⢸⡇⠄⠄⣿⡆⠄⢸⠄⠄⣿⠄⠄⢸⣿⠄⠄⡇⠄⠄⣼⡇⠄⢸⣿⠄⠄#\r\n"
+					+ "⠄⠄⣴⡟⠁⠄⠄⢸⠄⠄⠄⢿⣇⠄⢠⣿⠁⠄⢸⠄⠄⢸⣇⠄⠄⣿⠁⠄⢸⠄⠄⣿⡄⠄⢸⡟⠄⠄⡇⠄⠄⢹⡇⠄⢸⣿⠄⠄#\r\n"
+					+ "⠄⠘⠛⠛⠛⠛⠄⢸⠄⠄⠄⠄⠛⠲⠛⠁⠄⠄⢸⠄⠄⠄⠛⠲⠚⠋⠄⠄⢸⠄⠄⠈⠛⠶⠛⠁⠄⠄⡇⠄⠄⠈⠛⠶⠛⠁⠄⠄#\r\n"
+					+ "⠉⠉⠉⠉⠉⠉⠉⢸⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⢹⠉⠉⠉⠉⠉⠉⠉⠉⠉⢹⠉⠉⠉⠉⠉⠉⠉⠉⠉⡏⠉⠉⠉⠉⠉⠉⠉⠉⠉#\r\n"
+					+ "⠄⢠⣴⣶⣦⡄⠄⢸⠄⠄⠄⠄⣤⣶⣦⡄⠄⠄⢸⠄⠄⠄⣤⣶⣶⣄⠄⠄⢸⠄⠄⢀⣤⣶⣦⡀⠄⠄⡇⠄⠄⠄⢠⣴⡆⠄⠄⠄#\r\n"
+					+ "⠄⠈⠄⢀⣸⠇⠄⢸⠄⠄⠄⣼⡏⠄⠘⣿⡀⠄⢸⠄⠄⢸⡏⠄⠄⣿⡀⠄⢸⠄⠄⣾⠋⠄⢸⣷⠄⠄⡇⠄⠄⠄⠉⣿⡇⠄⠄⠄#\r\n"
+					+ "⠄⠄⠉⠉⢻⣦⠄⢸⠄⠄⠄⣿⡇⠄⠄⣿⠃⠄⢸⠄⠄⢸⡇⠄⠄⣿⠃⠄⢸⠄⠄⣿⡀⠄⢸⣿⠄⠄⡇⠄⠄⠄⠄⣿⡇⠄⠄⠄#\r\n"
+					+ "⠄⠠⣤⣤⣼⠟⠄⢸⠄⠄⠄⠘⢿⣤⡼⠟⠄⠄⢸⠄⠄⠘⢿⣤⣴⠟⠄⠄⢸⠄⠄⠹⣷⣤⡼⠃⠄⠄⡇⠄⠄⠄⣤⣿⣧⣤⠄⠄#\r\n"
+					+ "#####################################################\n");
 
 			respostah2.add("Coluna D, Linha 3"); // Correta
 			respostah2.add("Coluna C, Linha 3");
@@ -774,7 +1077,9 @@ public class cyberNoir {
 		return correto;
 	}
 
-	static Boolean hacking3() {
+	static Boolean hacking3() throws Exception {
+		
+		ArrayList<String> respostah3 = new ArrayList<String>();
 
 		int resposta = 3, resultado;
 
@@ -811,27 +1116,29 @@ public class cyberNoir {
 		return correto;
 	}
 
-	static Boolean hacking4() {
+	static Boolean hacking4() throws Exception {
 
-		int resultado, resposta = 3;
+		ArrayList<String> respostah4 = new ArrayList<String>();
+		
+
+		int resultado, resposta = 2;
 
 		Boolean correto = false;
-
-		System.out.println("- Porta trancada - ");
+		
+		System.out.println("- Virus -");
 		System.out.println("Resolva o desafio abaixo para prosseguir");
 		System.out.println("----------------------");
 
 		do {
 
-			respostah4.add("import java.util.Scanner();");
-			respostah4.add("import java.util.Scaner;");
-			respostah4.add("import java.util.Scanner;"); // Correta
-			respostah4.add("import Scanner;");
+			respostah4.add("()[],()[]");
+			respostah4.add("[][],[][]"); // Correta
+			respostah4.add("[][],()[]");
+			respostah4.add("()[],[][]"); 
 
-			System.out.println("Desafio - Um código está usando a biblioteca Scanner, porém, está dando erro na importação desta biblioteca. "
-							+ "Qual a maneira correta de importar?");
+			System.out.println("Desafio: O que falta na criação do vetor bidimensional abaixo?");
 			System.out.println("");
-			System.out.println("int nomeArray [] = *** *** [*]; ");
+			System.out.println("int ** ** vetor = new int ** **;");
 			System.out.println("");
 			System.out.println("1 - " + respostah4.get(0));
 			System.out.println("2 - " + respostah4.get(1));
@@ -840,16 +1147,20 @@ public class cyberNoir {
 			System.out.println("----------------------");
 			resultado = input.nextInt();
 
-		} while (resultado != resposta);
+		} while (resultado != resposta);	
 		if (resultado == resposta) {
 			System.out.println("----------------------");
-			System.out.println("Porta aberta. Seguindo em frente >>>");
+			System.out.println("Virus limpo. Seguindo em frente >>>");
 			correto = true;
+
 		}
+
 		return correto;
 	}
 
-	static Boolean hacking5() {
+	static Boolean hacking5() throws Exception {
+		
+		ArrayList<String> respostah5 = new ArrayList<String>();
 
 		int resultado, resposta = 3;
 
@@ -888,8 +1199,10 @@ public class cyberNoir {
 		return correto;
 	}
 
-	static Boolean hacking6() {
+	static Boolean hacking6() throws Exception {
 
+		ArrayList<String> respostah6 = new ArrayList<String>();
+		
 		int resultado, resposta = 2;
 
 		Boolean correto = false;
@@ -925,7 +1238,9 @@ public class cyberNoir {
 		return correto;
 	}
 
-	static Boolean hacking7() {
+	static Boolean hacking7() throws Exception {
+		
+		ArrayList<String> respostah7 = new ArrayList<String>();
 
 		int resultado, resposta = 3;
 
@@ -963,7 +1278,9 @@ public class cyberNoir {
 		return correto;
 	}
 
-	static Boolean hacking8() {
+	static Boolean hacking8() throws Exception {
+		
+		ArrayList<String> respostah8 = new ArrayList<String>();
 
 		int resultado, resposta = 2;
 
@@ -1000,24 +1317,28 @@ public class cyberNoir {
 		return correto;
 	}
 
-	static Boolean hacking9() {
+	static Boolean hacking9() throws Exception {
+		
+		ArrayList<String> respostah9 = new ArrayList<String>();
 
-		int resultado, resposta = 4;
+		int resultado, resposta = 2;
 
 		Boolean correto = false;
-
-		System.out.println("- Criptografia 5 -");
+		
+		System.out.println("- Bug matemático -");
 		System.out.println("Resolva o desafio abaixo para prosseguir");
 		System.out.println("----------------------");
 
 		do {
 
-			respostah9.add("Scanner “Variavel” = Scanner(Scanner.in);");
-			respostah9.add("Scanner “Variavel” = Scanner(Scanner.in);");
-			respostah9.add("Scanner Scanner = Scanner(Scanner.in);");
-			respostah9.add("Scanner “Variavel” = new Scanner(System.in);"); // Correta
+			respostah9.add("20");
+			respostah9.add("1010"); // Correta
+			respostah9.add("10,10");
+			respostah9.add("Nenhuma das anteriores"); 
 
-			System.out.println("Desafio: Qual a maneira correta de declarar um Scanner?");
+			System.out.println("Desafio: Qual é o resultado da união abaixo");
+			System.out.println("");
+			System.out.println("String r = “10” + “10”;");
 			System.out.println("");
 			System.out.println("1 - " + respostah9.get(0));
 			System.out.println("2 - " + respostah9.get(1));
@@ -1026,34 +1347,39 @@ public class cyberNoir {
 			System.out.println("----------------------");
 			resultado = input.nextInt();
 
-		} while (resultado != resposta);
+		} while (resultado != resposta);	
 		if (resultado == resposta) {
 			System.out.println("----------------------");
-			System.out.println("\"Descriptografada. Seguindo em frente >>>");
+			System.out.println("Bug resolvido. Seguindo em frente >>>");
 			correto = true;
+
 		}
 
 		return correto;
 	}
 
-	static Boolean hacking10() {
+	static Boolean hacking10() throws Exception {
+		
+		ArrayList<String> respostah10 = new ArrayList<String>();
 
-		int resultado, resposta = 3;
+		int resultado, resposta = 4;
 
-		Boolean correto = true;
-
-		System.out.println("- Porta com defeito -");
+		Boolean correto = false;
+		
+		System.out.println("- Bug matemático -");
 		System.out.println("Resolva o desafio abaixo para prosseguir");
 		System.out.println("----------------------");
 
 		do {
 
-			respostah10.add("variável = entrada.next();");
-			respostah10.add("variável = entrada.nextInt();");
-			respostah10.add("variavel = entrada.nextDouble();"); // Correta	
-			respostah10.add("variavel = entrada.nextdouble();"); 
+			respostah10.add("30");
+			respostah10.add("2010"); 
+			respostah10.add("20,10");
+			respostah10.add("Nenhuma das anteriores"); // Correta
 
-			System.out.println("Desafio: Qual a forma correta de usar o “next” para receber o valor de uma variável do tipo “double” usando o “Scanner” com nome de “entrada”?");
+			System.out.println("Desafio: Qual resultado da soma abaixo?");
+			System.out.println("");
+			System.out.println("int r = 20 + “10”;");
 			System.out.println("");
 			System.out.println("1 - " + respostah10.get(0));
 			System.out.println("2 - " + respostah10.get(1));
@@ -1065,199 +1391,6 @@ public class cyberNoir {
 		} while (resultado != resposta);	
 		if (resultado == resposta) {
 			System.out.println("----------------------");
-			System.out.println("Porta concertada. Seguindo em frente >>>");
-			correto = true;
-
-		}
-
-		return correto;
-	}
-
-	static Boolean hacking11() {
-
-		int resultado, resposta = 3;
-		
-		Boolean correto = false;
-		
-		System.out.println("- Porta com defeito -");
-		System.out.println("Resolva o desafio abaixo para prosseguir");
-		System.out.println("----------------------");
-
-		do {
-
-			respostah11.add("variável = entrada.next();");
-			respostah11.add("variável = entrada.nextInt();");
-			respostah11.add("variavel = entrada.nextDouble();"); // Correta	
-			respostah11.add("variavel = entrada.nextdouble();"); 
-
-			System.out.println("Desafio: Qual a forma correta de usar o “next” para receber o valor de uma variável do tipo “double” usando o “Scanner” com nome de “entrada”?");
-			System.out.println("");
-			System.out.println("1 - " + respostah11.get(0));
-			System.out.println("2 - " + respostah11.get(1));
-			System.out.println("3 - " + respostah11.get(2));
-			System.out.println("4 - " + respostah11.get(3));
-			System.out.println("----------------------");
-			resultado = input.nextInt();
-
-		} while (resultado != resposta);	
-		if (resultado == resposta) {
-			System.out.println("----------------------");
-			System.out.println("Porta concertada. Seguindo em frente >>>");
-			correto = true;
-
-		}
-
-		return correto;
-	}
-
-	static Boolean hacking12() {
-
-		int resultado, resposta = 2;
-
-		Boolean correto = false;
-		
-		System.out.println("- Virus -");
-		System.out.println("Resolva o desafio abaixo para prosseguir");
-		System.out.println("----------------------");
-
-		do {
-
-			respostah12.add("(),()");
-			respostah12.add("[],[]"); // Correta
-			respostah12.add("[],()");
-			respostah12.add("(),[]"); 
-
-			System.out.println("Desafio: O que falta na criação do vetor abaixo?");
-			System.out.println("");
-			System.out.println("int ** vetor = new int **");
-			System.out.println("");
-			System.out.println("1 - " + respostah12.get(0));
-			System.out.println("2 - " + respostah12.get(1));
-			System.out.println("3 - " + respostah12.get(2));
-			System.out.println("4 - " + respostah12.get(3));
-			System.out.println("----------------------");
-			resultado = input.nextInt();
-
-		} while (resultado != resposta);	
-		if (resultado == resposta) {
-			System.out.println("----------------------");
-			System.out.println("Virus limpo. Seguindo em frente >>>");
-			correto = true;
-
-		}
-
-		return correto;
-	}
-
-	static Boolean hacking13() {
-
-		int resultado, resposta = 1;
-
-		Boolean correto = false;
-		
-		System.out.println("- Sistema caiu -");
-		System.out.println("Resolva o desafio abaixo para prosseguir");
-		System.out.println("----------------------");
-
-		do {
-
-			respostah13.add("tipo primitivo, variavel"); // Correta
-			respostah13.add("variavel, variavel");
-			respostah13.add("variavel, tipo primitivo");
-			respostah13.add("tipo primitivo, tipo primitivo"); 
-
-			System.out.println("Desafio: O que falta declarar no laço for abaixo?");
-			System.out.println("");
-			System.out.println("for(*** i = 0; i < ***; i++; ");
-			System.out.println("");
-			System.out.println("1 - " + respostah13.get(0));
-			System.out.println("2 - " + respostah13.get(1));
-			System.out.println("3 - " + respostah13.get(2));
-			System.out.println("4 - " + respostah13.get(3));
-			System.out.println("----------------------");
-			resultado = input.nextInt();
-
-		} while (resultado != resposta);	
-		if (resultado == resposta) {
-			System.out.println("----------------------");
-			System.out.println("Sistema reerguido. Seguindo em frente >>>");
-			correto = true;
-
-		}
-
-		return correto;
-	}
-
-	static Boolean hacking14() {
-
-		int resultado, resposta = 2;
-
-		Boolean correto = false;
-		
-		System.out.println("- Virus -");
-		System.out.println("Resolva o desafio abaixo para prosseguir");
-		System.out.println("----------------------");
-
-		do {
-
-			respostah14.add("()[],()[]");
-			respostah14.add("[][],[][]"); // Correta
-			respostah14.add("[][],()[]");
-			respostah14.add("()[],[][]"); 
-
-			System.out.println("Desafio: O que falta na criação do vetor bidimensional abaixo?");
-			System.out.println("");
-			System.out.println("int ** ** vetor = new int ** **;");
-			System.out.println("");
-			System.out.println("1 - " + respostah14.get(0));
-			System.out.println("2 - " + respostah14.get(1));
-			System.out.println("3 - " + respostah14.get(2));
-			System.out.println("4 - " + respostah14.get(3));
-			System.out.println("----------------------");
-			resultado = input.nextInt();
-
-		} while (resultado != resposta);	
-		if (resultado == resposta) {
-			System.out.println("----------------------");
-			System.out.println("Virus limpo. Seguindo em frente >>>");
-			correto = true;
-
-		}
-
-		return correto;
-	}
-
-	static Boolean hacking15() {
-
-		int resultado, resposta = 4;
-
-		Boolean correto = false;
-		
-		System.out.println("- Bug matemático -");
-		System.out.println("Resolva o desafio abaixo para prosseguir");
-		System.out.println("----------------------");
-
-		do {
-
-			respostah15.add("30");
-			respostah15.add("2010"); 
-			respostah15.add("20,10");
-			respostah15.add("Nenhuma das anteriores"); // Correta
-
-			System.out.println("Desafio: Qual resultado da soma abaixo?");
-			System.out.println("");
-			System.out.println("int r = 20 + “10”;");
-			System.out.println("");
-			System.out.println("1 - " + respostah15.get(0));
-			System.out.println("2 - " + respostah15.get(1));
-			System.out.println("3 - " + respostah15.get(2));
-			System.out.println("4 - " + respostah15.get(3));
-			System.out.println("----------------------");
-			resultado = input.nextInt();
-
-		} while (resultado != resposta);	
-		if (resultado == resposta) {
-			System.out.println("----------------------");
 			System.out.println("Bug resolvido. Seguindo em frente >>>");
 			correto = true;
 
@@ -1266,209 +1399,58 @@ public class cyberNoir {
 		return correto;
 	}
 
-	static Boolean hacking16() {
-
-		int resultado, resposta = 2;
-
-		Boolean correto = false;
+	static int karen() throws Exception {
+		int vidaJogador = 40, defJogador = 12, atkJogador = 50; //declaração da vida e defesa do jogador
 		
-		System.out.println("- Bug matemático -");
-		System.out.println("Resolva o desafio abaixo para prosseguir");
-		System.out.println("----------------------");
-
-		do {
-
-			respostah16.add("20");
-			respostah16.add("1010"); // Correta
-			respostah16.add("10,10");
-			respostah16.add("Nenhuma das anteriores"); 
-
-			System.out.println("Desafio: Qual é o resultado da união abaixo");
-			System.out.println("");
-			System.out.println("String r = “10” + “10”;");
-			System.out.println("");
-			System.out.println("1 - " + respostah16.get(0));
-			System.out.println("2 - " + respostah16.get(1));
-			System.out.println("3 - " + respostah16.get(2));
-			System.out.println("4 - " + respostah16.get(3));
-			System.out.println("----------------------");
-			resultado = input.nextInt();
-
-		} while (resultado != resposta);	
-		if (resultado == resposta) {
-			System.out.println("----------------------");
-			System.out.println("Bug resolvido. Seguindo em frente >>>");
-			correto = true;
-
-		}
-
-		return correto;
-	}
-
-	static Boolean hacking17() {
-
-		int resultado, resposta = 4;
-
-		Boolean correto = false;
 		
-		System.out.println("- Bug matemático -");
-		System.out.println("Resolva o desafio abaixo para prosseguir");
 		System.out.println("----------------------");
-
-		do {
-
-			respostah17.add("20.27");
-			respostah17.add("20"); 
-			respostah17.add("27");
-			respostah17.add("Nenhuma das anteriores"); // Correta
-
-			System.out.println("Desafio: Qual é o resultado da união abaixo");
-			System.out.println("");
-			System.out.println("int r = 10 + 10.27;");
-			System.out.println("");
-			System.out.println("1 - " + respostah17.get(0));
-			System.out.println("2 - " + respostah17.get(1));
-			System.out.println("3 - " + respostah17.get(2));
-			System.out.println("4 - " + respostah17.get(3));
-			System.out.println("----------------------");
-			resultado = input.nextInt();
-
-		} while (resultado != resposta);	
-		if (resultado == resposta) {
-			System.out.println("----------------------");
-			System.out.println("Bug resolvido. Seguindo em frente >>>");
-			correto = true;
-
-		}
-
-		return correto;
-	}
-
-	static Boolean hacking18() {
-
-		int resultado, resposta = 4;
-
-		Boolean correto = false;
+		System.out.println("\n"
+				+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n"
+				+ "⠄⢀⣀⣀⣀⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⣀⣀⣀⣀⠄\n"
+				+ "⠄⢸⣿⣿⣿⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⠄\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⣧⣤⣤⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⠛⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣶⣶⣎⣉⣉⣉⡹⠿⠿⣿⣿⡿⠿⠿⣉⣉⣉⣱⣶⣶⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⠛⠛⢣⣤⣤⣿⣿⣧⣤⣤⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⡇⢀⣀⠄⠄⠄⢸⣿⣿⣿⣿⡇⠄⣀⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⠄⠄⠄⢸⣿⣿⣿⣿⡇⠄⣿⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⠛⠄⠄⢠⣼⣿⣿⣿⣿⣧⣤⠛⠄⠄⢠⣤⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⣿⣿⠿⣿⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⣿⠿⢿⣿⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⡏⠉⣶⠉⢱⡎⠉⣿⠉⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⢱⣶⠉⣶⡎⢹⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⡟⠛⣤⠛⢣⡜⠛⠛⠛⠛⠛⠛⠛⣿⣿⣿⣿⣿⣿⡟⢣⣤⠛⣤⡜⢻⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⣷⣶⣉⣶⣎⣱⣶⣀⠄⢰⡆⠄⣶⠉⢉⡉⠉⣉⠉⢱⣎⣉⣶⣉⣱⣾⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⠃⠄⣿⠄⢸⡇⠄⠛⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣀⣀⣀⣀⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n"
+				+ "⣿⡇⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠄⣿\n"
+				+ "⣿⣿⡟⠛⣿⣿⡟⠛⠛⣿⣿⡟⢻⣿⠛⣿⣿⣿⣿⣿⠛⢻⡟⠛⣿⠛⢻⣿⣿⠛⣿⣿⣿⣿⣿⠛⠛⢻⣿⣿\n"
+				+ "⣿⣿⡷⠶⣿⠉⢱⣶⣶⠉⣿⡷⢾⣿⠶⣿⣿⣿⣿⣿⠄⢈⡱⠶⣿⠄⢈⡹⠿⠄⣿⣏⣉⣉⣿⣶⡆⢸⣿⣿\n"
+				+ "⣿⣿⣧⣤⣿⣤⡜⠛⠛⣤⣿⣧⣼⣿⣤⣿⣿⣿⣿⣿⠄⢸⡇⠄⣿⠄⢸⣧⣤⠄⣿⣿⣿⣿⣿⠛⠃⠘⠛⣿\n"
+				+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+		System.out.println("HAHAHA Acha mesmo que pode me derrotar detetive? veremos...");
+		System.out.println("----------------------");
+		System.out.println("--------COMBATE INICIADO-------");
 		
-		System.out.println("- Bug matemático -");
-		System.out.println("Resolva o desafio abaixo para prosseguir");
-		System.out.println("----------------------");
-
-		do {
-
-			respostah18.add("5, 5");
-			respostah18.add("6, 6"); 
-			respostah18.add("5, 6");
-			respostah18.add("6, 5"); // Correta
-
-			System.out.println("Desafio:  Qual o resultado apresentado após a execução dos comandos Java abaixo?");
-			System.out.println("");
-			System.out.println("i. int var1 = 5;"
-					+ "\nii. int var2 = var1++;"
-					+ "\niii. System.out.println(var1 + “ e ” + var2);");
-			System.out.println("");
-			System.out.println("1 - " + respostah18.get(0));
-			System.out.println("2 - " + respostah18.get(1));
-			System.out.println("3 - " + respostah18.get(2));
-			System.out.println("4 - " + respostah18.get(3));
-			System.out.println("----------------------");
-			resultado = input.nextInt();
-
-		} while (resultado != resposta);	
-		if (resultado == resposta) {
-			System.out.println("----------------------");
-			System.out.println("Bug resolvido. Seguindo em frente >>>");
-			correto = true;
-
-		}
-
-		return correto;
-	}
-
-	static Boolean hacking19() {
-
-		int resultado, resposta = 3;
-
-		Boolean correto = false;
-		
-		System.out.println("- Bug no sistema -");
-		System.out.println("Resolva o desafio abaixo para prosseguir");
-		System.out.println("----------------------");
-
-		do {
-
-			respostah19.add("public static String main (String[] args)");
-			respostah19.add("public static void main (String args)"); 
-			respostah19.add("public static void main (String[] args)"); // Correta
-			respostah19.add("public static int main (String[] args)"); 
-
-			System.out.println("Desafio:  O método “Main” deve possuir uma assinatura que é obrigatória. Escolha a "
-					+ "\nalternativa que corresponde à assinatura correta do método “Main”.");
-			System.out.println("");
-			System.out.println("1 - " + respostah19.get(0));
-			System.out.println("2 - " + respostah19.get(1));
-			System.out.println("3 - " + respostah19.get(2));
-			System.out.println("4 - " + respostah19.get(3));
-			System.out.println("----------------------");
-			resultado = input.nextInt();
-
-		} while (resultado != resposta);	
-		if (resultado == resposta) {
-			System.out.println("----------------------");
-			System.out.println("Bug resolvido. Seguindo em frente >>>");
-			correto = true;
-
-		}
-
-		return correto;
-	}
-
-	static Boolean hacking20() {
-
-		int resultado, resposta = 4;
-
-		Boolean correto = false;
-
-		return correto;
-	}
-
-	static Boolean hacking21() {
-
-		int resultado, resposta = 4;
-
-		Boolean correto = false;
-
-		return correto;
-	}
-
-	static Boolean hacking22() {
-
-		int resultado, resposta = 4;
-
-		Boolean correto = false;
-
-		return correto;
-	}
-
-	static int karen() {
-
 		int vitoria = 0;
-
-		int vidaInimigo2_C1 = 10;
-		int defInimigo2_C1 = 0;
+		
+		int vidaKaren = 100;
+		int defKaren = 10;
+		int atkKaren = 55;
+		
+		System.out.println("A vida do inimigo é " + vidaKaren);
 
 		System.out.println("----------------------");
 		System.out.println("Seguindo em frente");
 		System.out.println("----------------------");
 
-		combat(vidaInimigo2_C1, defInimigo2_C1);
+		combat(vidaKaren, defKaren, atkKaren, vidaJogador, defJogador, atkJogador);
 
 		vitoria = 1;
 
 		return vitoria;
 	}
 
-	public static void main(String args[]) {
+	public static void main(String args[]) throws Exception {
 
 		int opcao;
 
@@ -1481,7 +1463,6 @@ public class cyberNoir {
 
 			switch (opcao) {
 			case 1:
-				insertionName();
 				
 				escolha = controleCidades();
 				historia();
@@ -1532,5 +1513,12 @@ public class cyberNoir {
 		} while (!quit);
 
 	}
-
+	
+public static void Print(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
+        for (char caractere : mensagem.toCharArray()) {
+        System.out.print(caractere);
+        unit.sleep(tempo_mensagem);
+        }
+	}
 }
+
