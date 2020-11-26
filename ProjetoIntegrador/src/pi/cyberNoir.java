@@ -6,11 +6,11 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class cyberNoir {
-	static int temp_dialog = 25, temp_narrativa = 50, temp_transicao = 80;
+	static int temp_dialog = 12, temp_narrativa = 25, temp_transicao = 50; //define o tempo em que cada diálogo ou narração é digitado
 
 	static Scanner input = new Scanner(System.in);
 
-	static int main() throws Exception {
+	static int main() throws Exception {// menu do jogo
 
 		int opcao = 0; 
 
@@ -30,7 +30,7 @@ public class cyberNoir {
 
 	}
 
-	static String insertionName() throws Exception {
+	static String insertionName() throws Exception {//função nome
 
 		String name;
 
@@ -42,7 +42,7 @@ public class cyberNoir {
 		return name;
 	}
 
-	static void credits() throws Exception {
+	static void credits() throws Exception {//função creditos
 
 		System.out.println("----------------------");
 		System.out.println("Créditos a Grupo 10 - Xiaomeiros");
@@ -53,24 +53,24 @@ public class cyberNoir {
 
 	static int iniciar() throws Exception {
 
-		int opcaoC;
+		int opcaoC = 0;
 
 		do {
 			System.out.println("----------------------");
-			System.out.println("1 - Iniciar história");
+			System.out.println("Digite 1 para começar >>>");
 			System.out.println("----------------------");
 			opcaoC = input.nextInt();
-		} while (opcaoC < 1 || opcaoC > 2);
+		} while (opcaoC < 1 || opcaoC > 1);
 
 		return opcaoC;
 	}
 
 	static void historia() throws Exception {
         
-		String nomeJogador = insertionName();
+		String nomeJogador = insertionName();// recebendo o return da função insertionName que é o nome do usuario, na variavel nomeJogador
 		
-		Print("----------------------", TimeUnit.MILLISECONDS, temp_dialog);	
-		Print("\n\nCaro "+nomeJogador+" seja bem vindo de volta ao escritório, nosso departamento policial "
+		Print("----------------------", TimeUnit.MILLISECONDS, temp_dialog);// usando a funcao Print com a variavel temp_dialog para printar na tela como se estivesse digitando
+		Print("\n\nCaro "+nomeJogador+". seja bem vindo de volta ao escritório, nosso departamento policial "
                         +"ficou uma bagunça desde que você entrou de férias. ", TimeUnit.MILLISECONDS, temp_narrativa);
                 Print("\nMuitos casos desaparecimentos e algumas coisas estranhas começaram acontecer em "
                         + "algumas cidades da região!", TimeUnit.MILLISECONDS, temp_narrativa);
@@ -78,29 +78,48 @@ public class cyberNoir {
                 Print("\nA propósito a Karen está com saudade de você, quase toda dia ela perguntava se você "
                         + "estava bem.", TimeUnit.MILLISECONDS, temp_narrativa);
                 
-                Print("\n\n***Você vai para a sua sala***\n\n", TimeUnit.MILLISECONDS, temp_transicao);
+                Print("\n\n***Você vai para a sua sala***\n", TimeUnit.MILLISECONDS, temp_transicao);
                 
-                Print(nomeJogador+"\n: Olá Karen, quanto tempo! Como você está?", TimeUnit.MILLISECONDS, temp_narrativa);
+                Print("\n"+nomeJogador+": Olá Karen, quanto tempo! Como você está?", TimeUnit.MILLISECONDS, temp_narrativa);
                 
                 Print("\n\n***Karen é sua assistente pessoal, ela é uma inteligencia artificial.***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
                 
-                //ASCI KAREN FELIZ!!!!
+                System.out.println(
+                		"⣿⡟⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⣿\n" + 
+                		"⣿⡇⢰⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⡆⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⠛⢻⣿⣿⣿⠛⢻⣿⣿⣿⣿⣿⣿⣿⠛⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣇⣸⣿⣿⣀⣸⣿⣿⣿⣿⣿⣿⣿⣀⣿⣿⣇⣀⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⡏⠉⠉⣿⣿⡏⠉⠉⠉⢹⣿⣿⣿⣿⣿⣿⣿⠉⠉⠉⢹⣿⣿⠉⠉⢹⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⡇⢠⣤⠄⠄⠄⢸⣿⣿⣿⣿⡇⠄⣤⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⠄⠄⠄⢸⣿⣿⣿⣿⡇⠄⣿⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⠛⠄⠄⢠⣼⣿⣿⣿⣿⣧⣤⠛⠄⠄⢠⣤⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⣿⣿⠛⣿⡟⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⣿⠛⢻⣿⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⣏⣉⠶⣉⡱⢎⣉⣿⣿⣏⣹⣿⣿⣿⣿⣿⣿⣿⣿⣏⡱⠶⣉⠶⢎⣹⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⡟⠛⣤⠛⢣⡜⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢣⣤⠛⣤⡜⢻⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⣿⣿⣀⣿⣇⣸⣿⠿⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⠿⢿⣇⣀⣿⣀⣸⣿⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿⣿⣿⣿⣿⠉⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣤⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⣿\n" + 
+                		"⣿⣇⣈⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣉⣁⣀⣿\n" + 
+                		"⣿⣿⡟⠛⣿⣿⡟⠛⠛⣿⣿⡟⢻⣿⠛⣿⣿⣿⣿⣿⠛⢻⡟⠛⣿⠛⢻⣿⣿⠛⣿⣿⣿⣿⣿⠛⠛⢻⣿⣿\n" + 
+                		"⣿⣿⡿⠿⣿⠄⢸⣿⣿⠄⣿⡿⢿⣿⠿⣿⣿⣿⣿⣿⠄⢀⡸⠿⣿⠄⢀⡸⠿⠄⣿⣇⣀⣀⣿⣿⡇⢸⣿⣿\n" + 
+                		"⣿⣿⣷⣶⣿⣶⡎⠉⠉⣶⣿⣷⣾⣿⣶⣿⣿⣿⣿⣿⠄⢸⡇⠄⣿⠄⢸⣷⣶⠄⣿⣿⣿⣿⣿⠉⠁⠈⠉⣿\n");
                                 
                 Print("\nKaren: Olá "+nomeJogador+" como você está?", TimeUnit.MILLISECONDS, temp_narrativa);
                 
-                Print("\n"+nomeJogador+": Eu estou bem, fiquei sabendo que a situação não está muito boa na região,"
-                        + "poderia separar uma lista de ditritos aonde eu preciso passar?", TimeUnit.MILLISECONDS, temp_narrativa);        
+                Print("\n"+nomeJogador+": Eu estou bem, fiquei sabendo que a situação não está muito boa na região, "
+                        + "poderia separar a lista dos distritos aonde eu preciso investigar?", TimeUnit.MILLISECONDS, temp_narrativa);        
 
                 Print("\nKaren: É bom te ter devolta!!!", TimeUnit.MILLISECONDS, temp_narrativa);
                 
-                Print("\nKaren: Estou providênciando uma lista agora mesmo, vou traçar uma rota para você e todos os distritos que você precisar investigar!", TimeUnit.MILLISECONDS, temp_narrativa);
+                Print("\nKaren: Estou providênciando uma lista agora mesmo, baseada nas pistas que temos até agora, vou traçar uma rota para você e todos os distritos que você precisar investigar!", TimeUnit.MILLISECONDS, temp_narrativa);
                 
                 Print("\n"+nomeJogador+": Valeu Karen!!!", TimeUnit.MILLISECONDS, temp_narrativa);
                 
-                Print("\nKaren: Distrito: Grajaú"
-                        + "\nDistrito: Taboão"
-                        + "\nCada cidade tem 3 casos e cada caso 3 e 5 hackings, e todos tem 3 combates!", TimeUnit.MILLISECONDS, temp_narrativa);
- 
+                Print("\nKaren: "+nomeJogador+", os os distritos são Grajaú e Taboão."
+                    + "\n       Cada cidade tem 3 casos e cada caso 3 e 5 hackings, e todos tem 3 combates!\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                //mudar texto sobre quantidade de casos
 	}
 	
 	static int grajau() throws Exception {
@@ -109,9 +128,11 @@ public class cyberNoir {
 
 		do {
 			
-			Print("\n ---------------------- \n Grajaú \n", TimeUnit.MILLISECONDS, temp_dialog);
-			Print("O lugar onde o crime vive de dia ou de noite... (Breve resumo do Grajaú) \n", TimeUnit.MILLISECONDS, temp_narrativa);
-			Print("1 - Iniciar casos Grajaú \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_dialog);
+			Print("\n----------------------\n \nGrajaú \n", TimeUnit.MILLISECONDS, temp_dialog);
+			Print("\n	O lugar onde o crime vive de dia ou de noite... \n"
+                                + "\n   Karen: Precisamos que você investigue esses casos, Grajaú ficou um lugar ainda mais perigoso desde que você entrou de férias.", TimeUnit.MILLISECONDS, temp_narrativa);
+                        Print("\n   Karen: Você vai ter que entrar em um prédio e conseguir algumas informações para nós!\n", TimeUnit.MILLISECONDS, temp_narrativa);
+			Print("\n----------------------\nDigite 1 para ir ao GRAJAÚ \n----------------------\n", TimeUnit.MILLISECONDS, temp_dialog);
 			opcaoG = input.nextInt();
 		} while (opcaoG < 1 || opcaoG > 2);
 
@@ -149,7 +170,6 @@ public class cyberNoir {
 	}
 
 	//casos grajau
-	
 	static int controleGrajau() throws Exception {
 
 		int opcaoG = grajau();
@@ -157,22 +177,27 @@ public class cyberNoir {
 		Boolean sair = false;
 
 		do {
-			int vidaJogador = 10, defJogador = 0, atkJogador = 20; //declaração da vida e defesa do jogador
+			int vidaJogador = 10, defJogador = 0, atkJogador = 30; //declaração da vida e defesa do jogador
 			//CASO 1 Grajau
+			
+			Print("----------------------\n\n ***Você sai do departamento de policia e se locomove até o local*** \n ", TimeUnit.MILLISECONDS, temp_transicao);// narrativa/dialog/transicao
+			Print("\n ***ao chegar, se depara com um grande prédio, densamente populado, parece até uma segunda cidade por dentro.*** \n" +
+				  "\n ***Você passa por uma multidão de pessoas aglomeradas entre as dezenas de lojas e barracas de comida de rua no primeiro andar do prédio*** \n" + 
+				  "\n ***em meio a multidão você vê seu colega Deckard do departamento de polícia comendo uma porção de yakisoba antes de seu expediente.*** \n" +
+				  "\n ***Você embarca no elevador para o apartamento á ser investigado*** \n" +
+				  "\n ***e encontra a porta do apartamento, ela está trancada, você precisa hackea-la*** \n" , TimeUnit.MILLISECONDS, temp_narrativa);
 
 			Boolean correto = hacking1();
 			
 			if (correto == true) {
+				
 				int vidaInimigo1_C1 = 10;
 				int defInimigo1_C1 = 0;
-				int atkInimigo1_C1 = 20;		
+				int atkInimigo1_C1 = 10;		
 				
-				System.out.println("----------------------");
-				Print("\n Narração: ao entrar no local, você se vê dois homens estranhos: \n", TimeUnit.MILLISECONDS, temp_narrativa);
-				System.out.println("----------------------");
+				Print("---------------------- \n ***Ao entrar no local, você se vê dois homens estranhos: ***\n----------------------", TimeUnit.MILLISECONDS, temp_narrativa);// narrativa/dialog/transicao
 				
-				System.out.println("\n"
-						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n"
+				System.out.println("\n\n"
 						+ "⣿⣿⣿⣿⣿⣿⡟⢣⣤⠛⣤⡜⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⠛⣿⣿⣿⣿⣿⣿\n"
 						+ "⣿⣿⣿⣿⣿⠉⠱⢎⣉⠶⣉⡱⠎⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⠉⣿⣿⣿⣿⣿\n"
 						+ "⣿⣿⣿⣿⠛⠄⢠⡜⠛⣤⠛⢣⡄⠄⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣤⠛⢻⣿⣿⣿\n"
@@ -192,45 +217,34 @@ public class cyberNoir {
 						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⣿⠿⢿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣿⡿⠿⣉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n"
 						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⣤⡜⢻⣿⣤⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n"
 						+ "⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠄⠸⠇⠄⠄⠄⠸⠿⠿⠿⣀⣀⣸⣿⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\n"
-						+ "⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⠉⠁⠄⠄⠄⠉⠉⠉⠉⠉\n"
-						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+						+ "⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⠉⠁⠄⠄⠄⠉⠉⠉⠉⠉\n");
 				
-				System.out.println("----------------------");
-				Print("\n Bandido 1: Tá fazendo oque aqui rapá? dando mole essas horas no Grajaú fi? \n", TimeUnit.MILLISECONDS, temp_dialog);
-				System.out.println("----------------------");
-				Print("\n Você: Cai fora, não quero confusão. \n", TimeUnit.MILLISECONDS, temp_dialog);
-				System.out.println("----------------------");
-				Print("\n Bandido 2: já arrumou uma parceiro! \n", TimeUnit.MILLISECONDS, temp_dialog);
+				Print("---------------------- \nBandido 1: Tá fazendo oque aqui rapá? essa é nossa área! \n", TimeUnit.MILLISECONDS, temp_dialog);
+				Print("---------------------- \nVocê: Cai fora, não quero confusão. \n", TimeUnit.MILLISECONDS, temp_dialog);
+				Print("---------------------- \nBandido 2: já arrumou uma, parceiro! \n", TimeUnit.MILLISECONDS, temp_dialog);
 				
-				System.out.println("---------------------- \n* Combate Iniciado *");
+				System.out.println("---------------------- \n*** Combate Iniciado ***\n----------------------");
 				System.out.println("A vida do inimigo é " + vidaInimigo1_C1);
-
 				
 				Boolean correto2 = combat(vidaInimigo1_C1, defInimigo1_C1, atkInimigo1_C1, vidaJogador, defJogador, atkJogador);
 				
 				if (correto2 == true) {
-					System.out.println("----------------------");
-					Print("Você encontra outro inimigo a frente... \n", TimeUnit.MILLISECONDS, temp_narrativa);
-					System.out.println("----------------------");
+
+					Print("---------------------- \n ***O Segundo inimigo avança em sua direção*** \n----------------------\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
 					int vidaInimigo2_C1 = 10;
 					int defInimigo2_C1 = 0;
-					int atkInimigo2_C1 = 20;
-					
-					Print("Narração: \n", TimeUnit.MILLISECONDS, temp_narrativa);
-					System.out.println("----------------------");
+					int atkInimigo2_C1 = 10;
 
 					Boolean correto3 = combat(vidaInimigo2_C1, defInimigo2_C1, atkInimigo2_C1, vidaJogador, defJogador, atkJogador);
 
-					Print("Narração: Ao entrar mais á fundo, você vê uma cena de crime, \n", TimeUnit.MILLISECONDS, temp_narrativa);
-					Print("um corpo de uma vítima dada como desaparecida está em uma cama no canto gélido quarto escuro. \n", TimeUnit.MILLISECONDS, temp_narrativa);
-					Print("você vê um terminal, ele está bloqueado, você precisa hackea-lo \n", TimeUnit.MILLISECONDS, temp_narrativa);
-					System.out.println("----------------------");
+					
+					Print("***Ao entrar mais á fundo naquele apartamento, você vê um computador, ele pode conter informações vitais para a investigação*** \n" + 
+					"***Você tenta hackea-lo*** \n antes de chegar até ele, você ouve passos fora do quarto", TimeUnit.MILLISECONDS, temp_narrativa);
 				
-					System.out.println("----------------------");
-					Print("Narração: Ao conseguir os dados, você ouve passos fora do quarto, é o líder daquela gangue! \n", TimeUnit.MILLISECONDS, temp_narrativa);
-					System.out.println("----------------------");
-					System.out.println("\n"
-							+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+					Print("***um homem forte, com cerca de 2 metros de altura entra no quarto, coberto de implantes cibernéticos*** \n ----------------------", TimeUnit.MILLISECONDS, temp_narrativa);
+
+					System.out.println("\n" +
 							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⠿⠿⣿⣿⣿⣿⣿⣿\r\n" + 
 							"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿\r\n" + 
 							"⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⣿⣿⣿⣿⣿\r\n" + 
@@ -250,40 +264,37 @@ public class cyberNoir {
 							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
 							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⣤⡜⢻⣿⣤⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
 							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠉⠉⠹⠿⠿⠿⣉⣉⣱⣶⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
-							"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
-							"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+							"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠛⠛⠛⠛⠛\r\n");
 					
-					System.out.println("---------------------- \n");
-					Print("O Grande Khan: Acha mesmo que pode entrar aqui, atirar nos meus homens e ficar por isso mesmo? HAHAHA \n", TimeUnit.MILLISECONDS, temp_dialog);
-					System.out.println("---------------------- \n* Combate Iniciado *\n ----------------------");
+					Print("---------------------- \n O Grande Khan: Acha mesmo que pode entrar aqui, atirar nos meus homens e ficar por isso mesmo? HAHAHA \n", TimeUnit.MILLISECONDS, temp_dialog);
+					System.out.println("---------------------- \n*** Combate Iniciado ***\n----------------------");
 					
 					if (correto3 == true) {
 
 						int vidaBoss_C1 = 20;
 						int defBoss_C1 = 2;
-						int atkBoss_C1 = 25;
+						int atkBoss_C1 = 20;
 
 						Boolean Finalizado = combat(vidaBoss_C1, defBoss_C1, atkBoss_C1, vidaJogador, defJogador, atkJogador);
-
 						if (Finalizado == true) {
 							
-							Print("Esse caso foi finalizado! \n", TimeUnit.MILLISECONDS, temp_narrativa);
-							System.out.println("----------------------");
-							Print("Você ganhou 5 pontos de vida e 2 de defesa adicionais! \\n Agora você tem 15 pontos de vida e 2 de defesa!", TimeUnit.MILLISECONDS, temp_narrativa);
-							System.out.println("----------------------");
+							Print("---------------------- \n ***Ao derrotar o líder da gangue, você prossegue para o computador, porém algum dispositivo de segurança é ativado, e o computador se auto-destroi!***\n ----------------------\n", TimeUnit.MILLISECONDS, temp_narrativa);// narrativa/dialog/transicao
 							
-							System.out.println("----------------------");
-							Print("Narração: ", TimeUnit.MILLISECONDS, temp_narrativa);
-							System.out.println("----------------------");
+							Print("\n Esse caso foi finalizado! \n", TimeUnit.MILLISECONDS, temp_narrativa);
+							Print("---------------------- \n ***Você ganhou 5 pontos de vida e 2 de defesa adicionais! \n Agora você tem 15 pontos de vida e 2 de defesa! ***\n ----------------------", TimeUnit.MILLISECONDS, temp_narrativa);
+							
 						}
 					}
 				}
 			}
 			
 			//CASO 2 Grajau
+			Print("---------------------- \n ***Sem sucesso no ultimo caso, você segue para sua próxima pista*** \n " +
+			"\n ***O local é um beco, você não encontra nada além de pixações, lixo e uma porta enferrujada, porém com modernos sistemas de segurança, você tenta hackea-la *** \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_narrativa);// narrativa/dialog/transicao
+			
 			vidaJogador = 15; //reseta vida e defesa do jogador
 			defJogador = 2;
-			atkJogador = 25;
+			atkJogador = 35;
 			
 			Boolean corretog1 = hacking2();
 			if (corretog1 == true) {
@@ -292,7 +303,6 @@ public class cyberNoir {
 				int atkInimigo1_C2 = 20;
 
 				System.out.println("\n"
-						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n"
 						+ "⣿⣿⣿⣿⣿⣿⡟⢣⣤⠛⣤⡜⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⠛⣿⣿⣿⣿⣿⣿\n"
 						+ "⣿⣿⣿⣿⣿⠉⠱⢎⣉⠶⣉⡱⠎⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⠉⣿⣿⣿⣿⣿\n"
 						+ "⣿⣿⣿⣿⠛⠄⢠⡜⠛⣤⠛⢣⡄⠄⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣤⠛⢻⣿⣿⣿\n"
@@ -312,10 +322,11 @@ public class cyberNoir {
 						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⣿⠿⢿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣿⡿⠿⣉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n"
 						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⣤⡜⢻⣿⣤⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n"
 						+ "⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠄⠸⠇⠄⠄⠄⠸⠿⠿⠿⣀⣀⣸⣿⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\n"
-						+ "⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⠉⠁⠄⠄⠄⠉⠉⠉⠉⠉\n"
-						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
-				System.out.println("----------------------");
-				Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
+						+ "⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⠉⠁⠄⠄⠄⠉⠉⠉⠉⠉\n");
+
+				Print("---------------------- \n Bandido 1: Ei! é aquele cara que atacou os caras do Grande Khan! \n", TimeUnit.MILLISECONDS, temp_dialog);
+				Print("---------------------- \n Bandido 2: perdeu rapá! perdeu! \n", TimeUnit.MILLISECONDS, temp_dialog);
+				System.out.println("---------------------- \n* Combate Iniciado * \n ----------------------");
 
 				Boolean corretog2 = combat(vidaInimigo1_C2, defInimigo1_C2, atkInimigo1_C2, vidaJogador, defJogador, atkJogador);
 
@@ -325,18 +336,11 @@ public class cyberNoir {
 					int defInimigo2_C2 = 0;
 					int atkInimigo2_C2 = 20;
 
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
+					Print("---------------------- \n ***O Segundo inimigo avança em sua direção*** \n ----------------------", TimeUnit.MILLISECONDS, temp_narrativa);
 
 					Boolean corretog3 = combat(vidaInimigo2_C2, defInimigo2_C2, atkInimigo2_C2, vidaJogador, defJogador, atkJogador);
-
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
 					
-					System.out.println("\n"
-							+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+					System.out.println("\n" +
 							"⣿⣿⣿⣿⣿⣿⡟⢣⣤⠛⣤⡜⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⠛⣿⣿⣿⣿⣿⣿\r\n" + 
 							"⣿⣿⣿⣿⣿⠉⠱⢎⣉⠶⣉⡱⠎⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⠉⣿⣿⣿⣿⣿\r\n" + 
 							"⣿⣿⣿⣿⠛⠄⢠⡜⠛⣤⠛⢣⡄⠄⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣤⠛⢻⣿⣿⣿\r\n" + 
@@ -356,17 +360,12 @@ public class cyberNoir {
 							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⣿⠿⢿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣿⡿⠿⣉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
 							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⣤⡜⢻⣿⣤⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
 							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠄⠸⠇⠄⠄⠄⠸⠿⠿⠿⣀⣀⣸⣿⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
-							"⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⠉⠁⠄⠄⠄⠉⠉⠉⠉⠉"
-							+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
-					System.out.println("----------------------");
-					Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
+							"⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⠉⠁⠄⠄⠄⠉⠉⠉⠉⠉");
 
-
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
+					Print("---------------------- \n Pequeno Khan: Você matou meus homens e meu irmão! AGORA MORRA! \n ----------------------", TimeUnit.MILLISECONDS, temp_dialog);// narrativa/dialog/transicao
 
 					if (corretog3 == true) {
+						Print("---------------------- \n ***O Líder inimigo avança em sua direção*** \n ----------------------", TimeUnit.MILLISECONDS, temp_narrativa);
 					
 						int vidaBoss_C2 = 25;
 						int defBoss_C2 = 4;
@@ -375,14 +374,7 @@ public class cyberNoir {
 						Boolean Finalizado = combat(vidaBoss_C2, defBoss_C2, atkBoss_C2, vidaJogador, defJogador, atkJogador);
 
 						if (Finalizado == true) {
-							System.out.println("Esse caso foi finalizado!");
-							System.out.println("----------------------");
-							System.out.println("Você ganhou 5 pontos de vida e 2 de defesa adicionais! \n Agora você tem 20 pontos de vida e 4 de defesa!");
-							System.out.println("----------------------");
-
-							System.out.println("----------------------");
-							System.out.println("Narração: ");
-							System.out.println("----------------------");
+							Print("\n ***Você encontra um computador, você tenta hackea-lo*** \n", TimeUnit.MILLISECONDS, temp_narrativa);
 
 						}
 					}
@@ -393,19 +385,25 @@ public class cyberNoir {
 			
 			hacking4();
 
+			Print("\n Esse caso foi finalizado! \n", TimeUnit.MILLISECONDS, temp_narrativa);
+			Print("---------------------- \n ***Você ganhou 5 pontos de vida e 2 de defesa adicionais! \n Agora você tem 20 pontos de vida e 4 de defesa! ***\n ---------------------- \n", TimeUnit.MILLISECONDS, temp_narrativa);
+			
 			//CASO 3 Grajau
+			Print("\n---------------------- \n ***Você não encontra nada relevante no computador, exceto por um endereço. \n sem outras opções, você vai até tal local.*** \n " +
+					"\n ***Você se depara com uma casa velha, aparentemente abandonada, porém com trancas modernas nas portas, você as hackeia. *** \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_narrativa);// narrativa/dialog/transicao
 			vidaJogador = 20; //reseta vida e defesa do jogador
 			defJogador = 4;
-			atkJogador = 30;
+			atkJogador = 40;
 				
 			Boolean corretogg1 = hacking5();
 			if (corretogg1 == true) {
 				int vidaInimigo1_C3 = 15;
 				int defInimigo1_C3 = 4;
 				int atkInimigo1_C3 = 25;
+				Print("---------------------- \n ***Você vê homens de terno preparando armas*** \n ----------------------", TimeUnit.MILLISECONDS, temp_narrativa);
 				
 				System.out.println("\n"
-						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+						+
 						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⠿⠿⣿⣿⣿⣿⣿⣿\r\n" + 
 						"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿\r\n" + 
 						"⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⣿⣿⣿⣿⣿\r\n" + 
@@ -425,14 +423,11 @@ public class cyberNoir {
 						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
 						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⣤⡜⢻⣿⣤⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
 						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠉⠉⠹⠿⠿⠿⣉⣉⣱⣶⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
-						"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
-						"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
-				System.out.println("----------------------");
-				Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
+						"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠛⠛⠛⠛⠛\r\n");
 				
-				System.out.println("----------------------");
-				System.out.println("Narração: ");
-				System.out.println("----------------------");
+				Print("----------------------\n Homem 1: Ele caiu em nossa armadilha HAHAHA, nunca vai sair vivo daqui!", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
+				
+				System.out.println("---------------------- \n* Combate Iniciado * \n ----------------------");
 
 				Boolean corretogg2 = combat(vidaInimigo1_C3, defInimigo1_C3, atkInimigo1_C3, vidaJogador, defJogador, atkJogador);
 
@@ -442,45 +437,35 @@ public class cyberNoir {
 					int defInimigo2_C3 = 4;
 					int atkInimigo2_C3 = 25;
 
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
+					Print("---------------------- \n ***O Segundo inimigo avança em sua direção*** \n ----------------------", TimeUnit.MILLISECONDS, temp_narrativa);
 
 					Boolean corretogg3 = combat(vidaInimigo2_C3, defInimigo2_C3, atkInimigo2_C3, vidaJogador, defJogador, atkJogador );
 
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
+					Print("---------------------- \n ***Um homem com armamento e armadura pesada entra pelo corredor*** \n ----------------------", TimeUnit.MILLISECONDS, temp_narrativa);
 
-					System.out.println("\n"
-							+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
-							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\r\n" + 
-							"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\r\n" + 
-							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
-							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⠛⢣⡜⠛⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
-							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
-							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⢸⣿⣿\r\n" + 
-							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⢸⣿⣿\r\n" + 
-							"⣿⣿⣷⣶⣶⠄⠄⠄⠄⠶⣉⡹⢏⣉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣶⣶⣾⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣤⠛⢣⡜⠛⣿⠛⢻⡟⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠄⠄⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠸⠿⠄⠿⢇⡸⠿⠄⠿⢿⣇⣀⣀⠿⠿⠿⠿⠿⠿⢇⣸⣿⠄⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠄⣶⡎⢹⣿⣿⣶⣶⣶⣶⠄⠄⠈⠉⠉⣶⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣤⠛⣿⣿⡇⠄⣤⣤⣤⣤⣤⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⢈⣉⠶⣿⡿⢇⣀⣿⠿⢏⣹⣿⠿⣿⡏⢱⣶⣿⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⠄⠄⠘⠛⠄⠛⠃⢸⣿⠛⣤⣼⡟⠛⣤⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⡀⠸⠿⣿⣿⣇⣸⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
-							"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
-							"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-					System.out.println("----------------------");
-					Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
+					System.out.println("\n\n"+
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\n" + 
+							"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⠛⢣⡜⠛⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⢸⣿⣿\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⢸⣿⣿\n" + 
+							"⣿⣿⣷⣶⣶⠄⠄⠄⠄⠶⣉⡹⢏⣉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣶⣶⣾⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣤⠛⢣⡜⠛⣿⠛⢻⡟⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠄⠄⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠸⠿⠄⠿⢇⡸⠿⠄⠿⢿⣇⣀⣀⠿⠿⠿⠿⠿⠿⢇⣸⣿⠄⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠄⣶⡎⢹⣿⣿⣶⣶⣶⣶⠄⠄⠈⠉⠉⣶⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣤⠛⣿⣿⡇⠄⣤⣤⣤⣤⣤⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⢈⣉⠶⣿⡿⢇⣀⣿⠿⢏⣹⣿⠿⣿⡏⢱⣶⣿⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⠄⠄⠘⠛⠄⠛⠃⢸⣿⠛⣤⣼⡟⠛⣤⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⡀⠸⠿⣿⣿⣇⣸⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\n" + 
+							"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\n");
 					
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
+					Print("---------------------- \n Alguém do departamento de policia mandou lembranças HAHAHA, Do Svidaniya!", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
 
 					if (corretogg3 == true) {
 
@@ -491,14 +476,11 @@ public class cyberNoir {
 						Boolean Finalizado = combat(vidaBoss_C3, defBoss_C3, atkBoss_C3, vidaJogador, defJogador, atkJogador);
 
 						if (Finalizado == true) {
-							System.out.println("Esse caso foi finalizado!");
-							System.out.println("----------------------");
-							System.out.println("Você ganhou 5 pontos de vida e 2 de defesa adicionais! \n Agora você tem 25 pontos de vida e 6 de defesa!");
-							System.out.println("----------------------");
-
-							System.out.println("----------------------");
-							System.out.println("Narração: ");
-							System.out.println("----------------------");
+							Print("\n Você coletou as evidências do local! \n", TimeUnit.MILLISECONDS, temp_narrativa);
+							Print("\n Esse caso foi finalizado! \n", TimeUnit.MILLISECONDS, temp_narrativa);
+							Print("---------------------- \n ***Você ganhou 5 pontos de vida e 2 de defesa adicionais! "
+								+ "\n Agora você tem 25 pontos de vida e 6 de defesa! ***"
+								+ "\n ---------------------- \n", TimeUnit.MILLISECONDS, temp_narrativa);
 						}
 					}
 				}
@@ -516,14 +498,26 @@ public class cyberNoir {
 	//casos taboao
 
 	static int controleTaboao() throws Exception{
-
+		Print("\n ***Você volta para o departamento de policia*** \n", TimeUnit.MILLISECONDS, temp_transicao);
+		Print("\n ---------------------- \n "
+			+ "Karen: Você conseguiu coletar as evidências! agora estamos mais perto de descobrir quem, ou o que, pode estar por trás desses crimes.\n"
+			+ "Karen: Com as novas pistas, consegui montar uma lista de distritos que você precisa investigar na cidade de Taboão das Trevas \n "
+			+ "Você: Obrigado Karen!, durante as investigações um dos criminosos mencionou que alguém do departamento de policia poderia estar envolvido,"
+			+ " temos alguma pista de quem possa ser? \n"
+			+ "Karen: Ele mencionou?, infelizmente não temos nenhuma pista sobre isso Detetive, ele devia estar tentando te provocar! \n"
+			+ "Você: Tem razão! não devo me preocupar com isso \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_dialog);
+		
+		Print("\n***Você se desloca até o local da primeira pista do Taboão***\n ", TimeUnit.MILLISECONDS, temp_narrativa);
+		
 		int opcaoT = taboao();
 
 		Boolean sair = false;
 
 		do {
-			int vidaJogador = 25, defJogador = 6, atkJogador = 35; //declaração da vida e defesa do jogador
+			int vidaJogador = 25, defJogador = 6, atkJogador = 45; //declaração da vida e defesa do jogador
 			//CASO 1 TABOAO
+			
+			Print("\n ***Ao Chegar no local você se depara com mais uma porta trancada*** \n ", TimeUnit.MILLISECONDS, temp_narrativa);
 
 			Boolean correto1 = hacking6();
 			if (correto1 == true) {
@@ -531,35 +525,29 @@ public class cyberNoir {
 				int defInimigo1_C4 = 6;
 				int atkInimigo1_C4 = 35;
 				
-				System.out.println("\n"
-						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
-						"⣿⣿⣿⣿⣿⣿⡟⢣⣤⠛⣤⡜⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡜⠛⣿⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⠉⠱⢎⣉⠶⣉⡱⠎⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⠉⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⠛⠄⢠⡜⠛⣤⠛⢣⡄⠄⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣤⠛⢻⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⠄⠄⠄⠸⠿⠄⠄⠄⠸⠿⠄⠿⠇⠸⠿⠄⠿⠇⠸⠿⠄⣿⡇⢀⣀⠿⠿⢿⣿⣿⣿⠄⢸⣿⣿⣿\r\n" + 
-						"⣿⣿⡏⠉⠄⠄⠄⠄⠄⠄⣶⡆⠄⠄⠄⠄⢰⣶⣶⣶⣶⣶⣶⣶⠄⠉⠁⢸⣿⠄⣶⡎⠉⠉⣿⣶⡎⢹⣿⣿\r\n" + 
-						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⢠⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣤⣤⠛⠃⢸⣿⠄⠛⠃⢸⣿⣿\r\n" + 
-						"⣿⣿⡇⠄⠄⠄⠄⢀⣀⠶⣀⡸⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠉⣶⣶⣎⣉⠄⣶⡆⢸⣿⣿\r\n" + 
-						"⣿⣿⡇⠄⠄⠄⠄⠘⠛⣤⣿⡇⢠⣤⣤⣤⡜⠛⠛⣿⣿⣿⡟⠛⠛⣤⣤⡄⠄⣤⣿⣿⣿⣿⠄⠛⠃⢸⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣀⠄⠄⠸⠿⣀⠿⢇⡀⠄⠄⠿⠿⢿⣿⣿⣿⣿⡿⠿⠿⣀⡀⠄⠄⠿⣿⣿⣿⣿⠿⣀⣸⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⠄⠄⢰⣶⣿⣶⡎⠁⠄⠄⣶⣶⣾⣿⣿⣿⣿⣷⣶⣶⠉⠁⠄⠄⣶⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿⣿⣿⣿⠛⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⠛⢻⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣶⡆⠈⠉⠿⣿⣿⣿⣿⠄⣿⣿⡿⠿⠄⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣿⡏⠉⣶⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⣿⣿⣿⣿⠄⣿⣿⡇⠄⠄⣿⡟⢻⣿⣿⠄⢸⣿⣿⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⠿⠿⢇⣀⣿⣿⣿⣿⣿⣀⣀⣸⣿⣿⣿⣿⣇⡸⠿⠿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⣿⣷⣶⠄⠄⢰⣾⣿⣿⣿⣿⣿⣿⠉⣿⣿⣿⣿⣿⣿⣿⣷⣶⣶⠉⢱⣾⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠘⢻⣿⣿⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⣿⠿⢿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣿⡿⠿⣉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+				System.out.println("\n" +
+						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⠿⠿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⢀⣀⣀⣀⣰⣶⣶⣶⣶⣶⣶⣶⣀⣀⣀⣀⣀⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⢠⡜⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⣤⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣀⡀⢸⣿⣀⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢇⣸⣿⣿⣿⡇⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣶⠉⢱⣾⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣷⡆⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛⠄⠘⠛⠛⠛⠛⠛⠛⠛⠛⠄⠘⠛⠛⠛⠛⠛⠃⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠶⢆⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠰⠶⣀⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⠃⠄⣤⣤⡄⠄⠄⠄⠄⠄⠄⠄⠛⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣸⣿⠿⣿⣿⣇⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⣶⡆⢰⣶⣶⠄⢸⣿⣿⠄⣿⣿⣿⣿⣶⠄⢰⣶⣶⣶⣶⣶⡆⠄⣶⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⣤⡜⢻⣿⠛⣤⣼⡇⠄⠄⣿⡟⢻⣿⣿⣤⡜⢻⣿⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠉⢁⡈⠉⣶⣿⣿⣷⣶⣀⣉⣱⣾⣿⣿⣿⣷⣎⣉⣉⣉⡉⢱⣶⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠘⢣⣤⣿⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠸⢇⣀⠿⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣿⣿⣿⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠈⠉⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
 						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⣤⡜⢻⣿⣤⣤⣤⣼⣿⣿⣿⣿⡇⠄⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠄⠸⠇⠄⠄⠄⠸⠿⠿⠿⣀⣀⣸⣿⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
-						"⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿⠉⠁⠄⠄⠄⠉⠉⠉⠉⠉"
-						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
-				System.out.println("----------------------");
-				Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
-
-				System.out.println("----------------------");
-				System.out.println("Narração: ");
-				System.out.println("----------------------");
+						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠉⠉⠹⠿⠿⠿⣉⣉⣱⣶⣿⣀⡸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
+						"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠛⠛⠛⠛⠛\r\n");
+				
+				Print("---------------------- \n ***Um inimigo avança em sua direção*** \n ----------------------", TimeUnit.MILLISECONDS, temp_narrativa);
 
 				Boolean correto2 = combat(vidaInimigo1_C4, defInimigo1_C4, atkInimigo1_C4, vidaJogador, defJogador, atkJogador);
 
@@ -568,46 +556,34 @@ public class cyberNoir {
 					int vidaInimigo2_C4 = 20;
 					int defInimigo2_C4 = 6;
 					int atkInimigo2_C4 = 35;
-
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
-
-					Boolean correto3 = combat(vidaInimigo2_C4, defInimigo2_C4, atkInimigo2_C4, vidaJogador, defJogador, atkJogador);
-
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
 					
-					System.out.println("\n"
-							+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
-							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\r\n" + 
-							"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\r\n" + 
-							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
-							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⠛⢣⡜⠛⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
-							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
-							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⢸⣿⣿\r\n" + 
-							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⢸⣿⣿\r\n" + 
-							"⣿⣿⣷⣶⣶⠄⠄⠄⠄⠶⣉⡹⢏⣉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣶⣶⣾⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣤⠛⢣⡜⠛⣿⠛⢻⡟⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠄⠄⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠸⠿⠄⠿⢇⡸⠿⠄⠿⢿⣇⣀⣀⠿⠿⠿⠿⠿⠿⢇⣸⣿⠄⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠄⣶⡎⢹⣿⣿⣶⣶⣶⣶⠄⠄⠈⠉⠉⣶⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣤⠛⣿⣿⡇⠄⣤⣤⣤⣤⣤⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⢈⣉⠶⣿⡿⢇⣀⣿⠿⢏⣹⣿⠿⣿⡏⢱⣶⣿⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⠄⠄⠘⠛⠄⠛⠃⢸⣿⠛⣤⣼⡟⠛⣤⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⡀⠸⠿⣿⣿⣇⣸⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
-							"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
-							"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-					System.out.println("----------------------");
-					Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
-
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
+					Print("---------------------- \n ***O Segundo inimigo avança em sua direção*** \n ----------------------", TimeUnit.MILLISECONDS, temp_narrativa);
+					
+					Boolean correto3 = combat(vidaInimigo2_C4, defInimigo2_C4, atkInimigo2_C4, vidaJogador, defJogador, atkJogador);
+					
+					System.out.println("\n" +
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\n" + 
+							"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⠛⢣⡜⠛⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⢸⣿⣿\n" + 
+							"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⢸⣿⣿\n" + 
+							"⣿⣿⣷⣶⣶⠄⠄⠄⠄⠶⣉⡹⢏⣉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣶⣶⣾⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣤⠛⢣⡜⠛⣿⠛⢻⡟⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠄⠄⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠸⠿⠄⠿⢇⡸⠿⠄⠿⢿⣇⣀⣀⠿⠿⠿⠿⠿⠿⢇⣸⣿⠄⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠄⣶⡎⢹⣿⣿⣶⣶⣶⣶⠄⠄⠈⠉⠉⣶⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣤⠛⣿⣿⡇⠄⣤⣤⣤⣤⣤⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⢈⣉⠶⣿⡿⢇⣀⣿⠿⢏⣹⣿⠿⣿⡏⢱⣶⣿⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⠄⠄⠘⠛⠄⠛⠃⢸⣿⠛⣤⣼⡟⠛⣤⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⡀⠸⠿⣿⣿⣇⣸⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\n" + 
+							"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\n");
+					
+					Print("\n Soldado Corporativo: Olha, olha, quem estou vendo por aqui, se não é o tal do frangote do detetive, vem pro pau! \n ", TimeUnit.MILLISECONDS, temp_dialog);
 
 					if (correto3 == true) {
 
@@ -618,15 +594,7 @@ public class cyberNoir {
 						Boolean Finalizado = combat(vidaBoss_C4, defBoss_C4, atkBoss_C4, vidaJogador, defJogador, atkJogador );
 
 						if (Finalizado == true) {
-							System.out.println("Esse caso foi finalizado!");
-							System.out.println("----------------------");
-							System.out.println("Você ganhou 5 pontos de vida e 2 de defesa adicionais! \n Agora você tem 30 pontos de vida e 8 de defesa!");
-							System.out.println("----------------------");
-
-							System.out.println("----------------------");
-							System.out.println("Narração: ");
-							System.out.println("----------------------");
-
+							Print("\n ***Você encontra um computador, você tenta hackea-lo*** \n", TimeUnit.MILLISECONDS, temp_narrativa);
 						}
 					}
 				}
@@ -635,11 +603,23 @@ public class cyberNoir {
 			hacking7();
 
 			hacking8();
+			
+			Print("\n Esse caso foi finalizado! \n", TimeUnit.MILLISECONDS, temp_narrativa);
+			Print("---------------------- \n ***Você ganhou 5 pontos de vida e 2 de defesa adicionais! "
+				+ "\n Agora você tem 30 pontos de vida e 8 de defesa! ***"
+				+ "\n ---------------------- \n", TimeUnit.MILLISECONDS, temp_narrativa);
+
 
 			//CASO 2 TABOAO
+			Print("\n ***Com as pistas encontradas no último local, você segue para o próximo*** \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_transicao);
+			Print("\n ***Você vê um prédio alto, a sede de uma das maiores corporações do país.*** \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_transicao);
+			Print("\n ***Diversos guardas armados estão na frente do prédio, mas você percebe uma porta nos fundos desprotegida.*** \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_transicao);
+			
 			vidaJogador = 30; //reseta vida e defesa do jogador
 			defJogador = 8;
-			atkJogador = 40;
+			atkJogador = 50;
+			
+			Print("\n ***Você precisa hackea-la*** \n ", TimeUnit.MILLISECONDS, temp_narrativa);
 			
 			Boolean corretot1 = hacking9();
 			if (corretot1 == true) {
@@ -647,8 +627,7 @@ public class cyberNoir {
 				int defInimigo1_C5 = 6;
 				int atkInimigo1_C5 = 35;
 				
-				System.out.println("\n"
-						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+				System.out.println("\n" +
 						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
 						"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\r\n" + 
 						"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\r\n" + 
@@ -668,14 +647,9 @@ public class cyberNoir {
 						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
 						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
 						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
-						"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
-						"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-				System.out.println("----------------------");
-				Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
+						"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\r\n");
 
-				System.out.println("----------------------");
-				System.out.println("Narração: ");
-				System.out.println("----------------------");
+				Print("----------------------\n Soldado Corporativo: Essa é uma área privada! você está invadindo! \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
 
 				Boolean corretot2 = combat(vidaInimigo1_C5, defInimigo1_C5, atkInimigo1_C5, vidaJogador, defJogador, atkJogador);
 
@@ -684,19 +658,10 @@ public class cyberNoir {
 					int vidaInimigo2_C5 = 25;
 					int defInimigo2_C5 = 6;
 					int atkInimigo2_C5 = 35;
-
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
-
-					Boolean corretot3 =combat(vidaInimigo2_C5, defInimigo2_C5, atkInimigo2_C5, vidaJogador, defJogador, atkJogador);
-
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
 					
-					System.out.println("\n"
-							+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
+					Boolean corretot3 =combat(vidaInimigo2_C5, defInimigo2_C5, atkInimigo2_C5, vidaJogador, defJogador, atkJogador);
+					
+					System.out.println("\n" +
 							"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
 							"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\r\n" + 
 							"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\r\n" + 
@@ -716,14 +681,8 @@ public class cyberNoir {
 							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
 							"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
 							"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
-							"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
-							"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-					System.out.println("----------------------");
-					Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
-
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
+							"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\r\n");
+					Print("\n Você não pode se meter nos interesses da Corporação! \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_dialog);
 
 					if (corretot3 == true) {
 
@@ -734,24 +693,29 @@ public class cyberNoir {
 						Boolean Finalizado = combat(vidaBoss_C5, defBoss_C5, atkBoss_C5, vidaJogador, defJogador, atkJogador);
 
 						if (Finalizado == true) {
-							System.out.println("Esse caso foi finalizado!");
-							System.out.println("----------------------");
-							System.out.println("Você ganhou 5 pontos de vida e 2 de defesa adicionais! \n Agora você tem 35 pontos de vida e 10 de defesa!");
-							System.out.println("----------------------");
-
-							System.out.println("----------------------");
-							System.out.println("Narração: ");
-							System.out.println("----------------------");
-
+							Print("\n Esse caso foi finalizado! \n", TimeUnit.MILLISECONDS, temp_narrativa);
+							Print("---------------------- \n ***Você ganhou 5 pontos de vida e 2 de defesa adicionais! "
+								+ "\n Agora você tem 35 pontos de vida e 10 de defesa! ***"
+								+ "\n ---------------------- \n", TimeUnit.MILLISECONDS, temp_narrativa);
+							
+							Print("\n ***Você encontra um memorando com informações importantes, e sai *** \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_transicao);
+							
 						}
 					}
 				}
 			}
 			
 			//CASO 3 TABOAO
+			Print("\n ***Ao analisar as pistas com mais calma, você descobre que as informações confirmam que havia alguem de dentro do departamento envolvido dos crimes *** \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_transicao);
+			Print("\n ***Você ve o código 'KN-1', o mesmo código inscrito no monitor da Karen*** \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_transicao);
+			Print("\n Você: Que robô falso! \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_dialog);
+			Print("\n ***Você volta para o departamento de polícia para confrontar Karen*** \n ---------------------- \n", TimeUnit.MILLISECONDS, temp_transicao);
+			
 			vidaJogador = 35; //reseta vida e defesa do jogador
 			defJogador = 10;
-			atkJogador = 40;
+			atkJogador = 55;
+			
+			Print("\n ***Ao Chegar no local ele está vazio, e as portas estão trancadas, você precisa hackear para entrar*** \n ", TimeUnit.MILLISECONDS, temp_narrativa);
 			
 			Boolean corretott1 = hacking10();
 			if (corretott1 == true) {
@@ -759,35 +723,30 @@ public class cyberNoir {
 				int defInimigo1_C6 = 6;
 				int atkInimigo1_C6 = 35;
 				
-				System.out.println("\n"
-						+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
-						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\r\n" + 
-						"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\r\n" + 
-						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
-						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⠛⢣⡜⠛⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
-						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\r\n" + 
-						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⢸⣿⣿\r\n" + 
-						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⢸⣿⣿\r\n" + 
-						"⣿⣿⣷⣶⣶⠄⠄⠄⠄⠶⣉⡹⢏⣉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣶⣶⣾⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣤⠛⢣⡜⠛⣿⠛⢻⡟⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠄⠄⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠸⠿⠄⠿⢇⡸⠿⠄⠿⢿⣇⣀⣀⠿⠿⠿⠿⠿⠿⢇⣸⣿⠄⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠄⣶⡎⢹⣿⣿⣶⣶⣶⣶⠄⠄⠈⠉⠉⣶⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣤⠛⣿⣿⡇⠄⣤⣤⣤⣤⣤⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⢈⣉⠶⣿⡿⢇⣀⣿⠿⢏⣹⣿⠿⣿⡏⢱⣶⣿⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⠄⠄⠘⠛⠄⠛⠃⢸⣿⠛⣤⣼⡟⠛⣤⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⡀⠸⠿⣿⣿⣇⣸⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\r\n" + 
-						"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛\r\n" +
-						"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-				System.out.println("----------------------");
-				Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
-
-				System.out.println("----------------------");
-				System.out.println("Narração: ");
-				System.out.println("----------------------");
+				System.out.println("\n" +
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣀⠿⢇⡸⠿⣀⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿\n" + 
+						"⣿⣿⣿⣿⠉⠄⠄⠄⠄⠉⣶⡎⢱⣶⠉⣶⡎⢱⣶⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠉⢹⣿⣿⣿\n" + 
+						"⣿⣿⡟⠛⠄⠄⠄⠄⠄⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣤⠛⢣⡜⠛⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠿⢇⡸⠿⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⢸⣿⣿\n" + 
+						"⣿⣿⡇⠄⠄⠄⠄⠄⠄⠛⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⢸⣿⣿\n" + 
+						"⣿⣿⣷⣶⣶⠄⠄⠄⠄⠶⣉⡹⢏⣉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄⠄⣶⣶⣾⣿⣿\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⣤⠛⢣⡜⠛⣿⠛⢻⡟⠛⠛⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠄⠄⣿⣿⣿⣿⣿\n" + 
+						"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠸⠿⠄⠿⢇⡸⠿⠄⠿⢿⣇⣀⣀⠿⠿⠿⠿⠿⠿⢇⣸⣿⠄⣿⣿⣿⣿⣿\n" + 
+						"⣿⣿⣿⣿⣿⣶⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠁⠄⠄⣶⡎⢹⣿⣿⣶⣶⣶⣶⠄⠄⠈⠉⠉⣶⣿⣿⣿⣿⣿\n" + 
+						"⣿⣿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣤⠛⣿⣿⡇⠄⣤⣤⣤⣤⣤⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿\n" + 
+						"⣿⣿⣿⣿⣿⣿⣷⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⢈⣉⠶⣿⡿⢇⣀⣿⠿⢏⣹⣿⠿⣿⡏⢱⣶⣿⣿⣿⣿⣿⣿\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣧⣤⠄⠄⠄⠄⠄⠄⠄⠄⠘⠛⠄⠛⠃⢸⣿⠛⣤⣼⡟⠛⣤⠛⢣⣼⣿⣿⣿⣿⣿⣿⣿\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⡀⠸⠿⣿⣿⣇⣸⣿⣿⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠄⠄⠄⠄⠄⠄⢰⣶⠉⠉⢱⡆⠄⠉⣿⣿⣿⣿⠉⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+						"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣤⡜⢣⣤⠛⠛⢣⡜⠛⣤⠄⠘⠃⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+						"⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠄⠄⠄⠄⠄⠉⠱⠎⠉⠶⠶⠎⠱⠶⠉⠄⠄⠄⠄⠄⠄⠸⠿⠿⠿⣿⣿⣿⣿⣿\n" + 
+						"⠛⠛⠛⠛⠛⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⠛⠛⠛⠛");
+				Print("\n Soldado Corporativo: PARE! Estamos com ordens para fechar o departamento! \n", TimeUnit.MILLISECONDS, temp_transicao);
+				Print("\n Você: Eu sou um detetive aqui!, preciso entrar! \n", TimeUnit.MILLISECONDS, temp_transicao);
+				Print("\n Soldado Corporativo: Você é o detetive? ABRIR FOGO! \n", TimeUnit.MILLISECONDS, temp_transicao);
 				
 				Boolean corretott2 = combat(vidaInimigo1_C6, defInimigo1_C6, atkInimigo1_C6, vidaJogador, defJogador, atkJogador);
 
@@ -797,49 +756,36 @@ public class cyberNoir {
 					int defInimigo2_C6 = 6;
 					int atkInimigo2_C6 = 35;
 
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
-
 					Boolean corretott3 = combat(vidaInimigo2_C6, defInimigo2_C6, atkInimigo2_C6, vidaJogador, defJogador, atkJogador);
 
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
-
-					System.out.println("----------------------");
-					System.out.println("Narração: ");
-					System.out.println("----------------------");
-
 					if (corretott3 == true) {
+						Print("\n ***Você vê um robô grande com fios e circuitos expostos, com uma face que lembra um esqueleto humano!*** \n", TimeUnit.MILLISECONDS, temp_transicao);
 						
-						System.out.println("\n"
-								+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n" +
-								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⢇⡀⠄⣀⣀⣀⣀⣀⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⠉⢱⣶⠄⣶⡎⢱⣶⠉⣿⣿⣿⣿⣶⣶⣶⡎⠉⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⣿⣿⣿⡟⠛⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⣿⣿⡏⠁⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡎⠉⣿⣿⣿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠛⢣⡜⠛⣤⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣤⠛⣿⣿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⠿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡸⠿⣀⠿⢿⣿⣿⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⠄⠿⢿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⢰⣶⣶⠄⠈⢱⣶⠉⣶⣾⣿⣿⠉⣶⣶⡎⠉⠉⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⣤⣼⣿⣿⣿⣿⡇⢠⣤⠛⣤⣼⡇⠄⣿⣿⣿⣿⣿⣤⠛⢻⣿⣿⠄⠄⢸⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠿⢿⣿⣿⣿⠿⠇⠈⠉⠶⣉⣹⣇⣀⠿⣿⣿⣿⣿⠿⣀⣸⣿⣿⠄⠄⢸⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠘⠛⠛⠛⠄⠄⠄⠄⣤⠛⢻⣿⣿⣤⠛⠛⠛⠛⣤⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⠄⣿⣿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⣿⣀⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣾⣿⣿⣿⡿⠏⠉⣉⠉⠉⠁⠄⣀⣿⣿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⢻⣿⣿⠛⠛⠃⢠⣤⣿⠄⠄⢠⣤⣿⣿⣿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⣿⣿⣿⣇⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡿⠿⠄⠄⢀⣸⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣾⡇⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⢠⣤⠄⣤⣤⣤⣤⣿⠛⢣⣼⣿⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣀⡀⠈⠉⠶⠉⠹⠿⠿⣉⠄⢸⣿⣿⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠛⢣⡄⠄⠄⣤⡄⢠⣤⣿⠄⢸⣿⣿⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n" + 
-								"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-						System.out.println("----------------------");
+						System.out.println("\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⢇⡀⠄⣀⣀⣀⣀⣀⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⠉⢱⣶⠄⣶⡎⢱⣶⠉⣿⣿⣿⣿⣶⣶⣶⡎⠉⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⡟⠛⠄⠄⠘⢣⣤⠛⣤⡜⢣⣤⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡜⢻⣿⣿⣿⣿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⣿⣿⡏⠁⠄⠄⠄⠄⠈⠉⠶⣉⡱⢎⣉⠶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡎⠉⣿⣿⣿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⣿⠛⠃⠄⠄⠄⠄⠄⠄⠄⠄⠛⢣⡜⠛⣤⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣤⠛⣿⣿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⠿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡸⠿⣀⠿⢿⣿⣿⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⠄⠿⢿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⢰⣶⣶⠄⠈⢱⣶⠉⣶⣾⣿⣿⠉⣶⣶⡎⠉⠉⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⣤⣼⣿⣿⣿⣿⡇⢠⣤⠛⣤⣼⡇⠄⣿⣿⣿⣿⣿⣤⠛⢻⣿⣿⠄⠄⢸⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠿⢿⣿⣿⣿⠿⠇⠈⠉⠶⣉⣹⣇⣀⠿⣿⣿⣿⣿⠿⣀⣸⣿⣿⠄⠄⢸⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠘⠛⠛⠛⠄⠄⠄⠄⣤⠛⢻⣿⣿⣤⠛⠛⠛⠛⣤⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⢸⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⠄⣿⣿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⣿⣀⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣶⣾⣿⣿⣿⡿⠏⠉⣉⠉⠉⠁⠄⣀⣿⣿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠛⢻⣿⣿⠛⠛⠃⢠⣤⣿⠄⠄⢠⣤⣿⣿⣿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣇⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡿⠿⠄⠄⢀⣸⣿⣿⣿⣿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣶⣾⡇⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⢠⣤⠄⣤⣤⣤⣤⣿⠛⢣⣼⣿⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⣀⡀⠈⠉⠶⠉⠹⠿⠿⣉⠄⢸⣿⣿⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n" + 
+								"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠛⢣⡄⠄⠄⣤⡄⢠⣤⣿⣿⣿⣿⣿⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n");
+						Print("\n The Deciever: Detetive Detetive... você seguiu nossos passos como esperavamos!, minha criadora está muito contente \n", TimeUnit.MILLISECONDS, temp_transicao);
+						Print("\n The Deciever: Mas agora preciso te parar! hahaha *beep* \n", TimeUnit.MILLISECONDS, temp_transicao);
 					
-						
-						Print("", TimeUnit.MILLISECONDS, temp_dialog); // narrativa/dialog/transicao
+						System.out.println("---------------------- \n* Combate Iniciado * \n ----------------------");
 
 						int vidaBoss_C6 = 70;
 						int defBoss_C6 = 8;
@@ -847,15 +793,11 @@ public class cyberNoir {
 						
 						Boolean Finalizado = combat(vidaBoss_C6, defBoss_C6, atkBoss_C6, vidaJogador, defJogador, atkJogador);
 
-						if (Finalizado == true) {
-							System.out.println("Esse caso foi finalizado!");
-							System.out.println("----------------------");
-							System.out.println("Você ganhou 5 pontos de vida e 2 de defesa adicionais! \n Agora você tem 40 pontos de vida e 12 de defesa!");
-							System.out.println("----------------------");
-
-							System.out.println("----------------------");
-							System.out.println("Narração: ");
-							System.out.println("----------------------");
+						if (Finalizado == true) {							
+							Print("\n Esse caso foi finalizado! \n", TimeUnit.MILLISECONDS, temp_narrativa);
+							Print("---------------------- \n ***Você ganhou 5 pontos de vida e 2 de defesa adicionais! "
+								+ "\n Agora você tem 40 pontos de vida e 12 de defesa! ***"
+								+ "\n ---------------------- \n", TimeUnit.MILLISECONDS, temp_narrativa);
 
 						}
 					}
@@ -883,9 +825,6 @@ public class cyberNoir {
 
 		Boolean combateFim = false;
 
-		// a cada caso trocar a arma por uma arma mais forte e deixar o inimigo mais
-		// forte (variavel arma atual)
-
 		do {
 			// ataque do jogador
 			System.out.print("Escolha o seu ataque, ataques disponiveis: \n 1 - Pistola 9mm \n 2 - Corpo á corpo \n 3 - Faca \n");
@@ -904,10 +843,8 @@ public class cyberNoir {
 			}
 
 			// defesa do inimigo contra o jogador
-			// atkJ = atkJ - (defInimigo*0.5);
-
 			if (atkJ <= defInimigo) { // se o valor do ataque for igual ou menor ï¿½ defesa, apenas 50% do valor do
-										// ataque ï¿½ vï¿½lido
+										// ataque é inválido
 				atkJ = atkJ * 0.5;
 				if (atkJ < 0) { // impede valores negativos
 					atkJ = 0;
@@ -918,7 +855,8 @@ public class cyberNoir {
 			}
 
 			vidaInimigo = (float) (vidaInimigo - atkJ);
-
+			
+			//ataque jogador
 			if (atkJ <= 0) {
 				System.out.println("Você errou o ataque");
 				System.out.println("----------------------");
@@ -929,14 +867,12 @@ public class cyberNoir {
 				System.out.println("----------------------");
 			}
 
+			//inimigo morre
 			if (vidaInimigo <= 0) {
-				System.out.println("Você matou o inimigo!");
-				System.out.println("----------------------");
+				Print("***Você matou o inimigo!***\n", TimeUnit.MILLISECONDS, temp_narrativa);
 				combateFim = true;
 				break;
 			}
-
-			// ataque do inimigo
 
 			// escolha do ataque do inimigo
 			atkI = dado.nextInt(atkInimigo);
@@ -955,8 +891,9 @@ public class cyberNoir {
 			}
 
 			vidaJogador = vidaJogador - atkI;
-
-			if (atkJ <= 0) {
+			
+			//ataque inimigo
+			if (atkI <= 0) {
 				System.out.println("O inimigo errou o ataque.");
 				System.out.println("----------------------");
 			} else {
@@ -964,9 +901,10 @@ public class cyberNoir {
 				System.out.println("----------------------");
 			}
 
+			//jogador morre
 			if (vidaJogador <= 0) {
-				System.out.println("Você Morreu!");
-				System.out.println("----------------------");
+				Print("***Você morreu! tente novamente! *** \n----------------------\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
 				vidaJogador = vidaJogadorBckp;
 				vidaInimigo = vidaInimigoBckp;
 			}
@@ -984,6 +922,7 @@ public class cyberNoir {
 
 		Boolean correto = false;
 		
+		System.out.println("----------------------");
 		System.out.println("- Virus -");
 		System.out.println("Resolva o desafio abaixo para prosseguir");
 		System.out.println("----------------------");
@@ -1026,7 +965,7 @@ public class cyberNoir {
 		Boolean correto = false;
 
 		System.out.println("- Erro na Matriz -");
-		System.out.println("Resolve o desafio abaixo para prosseguir");
+		System.out.println("Resolva o desafio abaixo para prosseguir");
 		System.out.println("----------------------");
 
 		do {
@@ -1400,8 +1339,7 @@ public class cyberNoir {
 	}
 
 	static int karen() throws Exception {
-		int vidaJogador = 40, defJogador = 12, atkJogador = 50; //declaração da vida e defesa do jogador
-		
+		int vidaJogador = 40, defJogador = 12, atkJogador = 60; //declaração da vida e defesa do jogador
 		
 		System.out.println("----------------------");
 		System.out.println("\n"
@@ -1427,23 +1365,26 @@ public class cyberNoir {
 				+ "⣿⣿⡷⠶⣿⠉⢱⣶⣶⠉⣿⡷⢾⣿⠶⣿⣿⣿⣿⣿⠄⢈⡱⠶⣿⠄⢈⡹⠿⠄⣿⣏⣉⣉⣿⣶⡆⢸⣿⣿\n"
 				+ "⣿⣿⣧⣤⣿⣤⡜⠛⠛⣤⣿⣧⣼⣿⣤⣿⣿⣿⣿⣿⠄⢸⡇⠄⣿⠄⢸⣧⣤⠄⣿⣿⣿⣿⣿⠛⠃⠘⠛⣿\n"
 				+ "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
-		System.out.println("HAHAHA Acha mesmo que pode me derrotar detetive? veremos...");
-		System.out.println("----------------------");
-		System.out.println("--------COMBATE INICIADO-------");
+		
+		Print("\n Karen: Você desvendou o mistério! estou impressionada! \n", TimeUnit.MILLISECONDS, temp_transicao);
+		Print("\n Karen: Agora preciso acabar com você para continuar com meus planos! \n", TimeUnit.MILLISECONDS, temp_transicao);
+		
+		System.out.println("-------COMBATE FINAL INICIADO-------");
 		
 		int vitoria = 0;
 		
 		int vidaKaren = 100;
-		int defKaren = 10;
+		int defKaren = 8;
 		int atkKaren = 55;
 		
 		System.out.println("A vida do inimigo é " + vidaKaren);
 
-		System.out.println("----------------------");
-		System.out.println("Seguindo em frente");
-		System.out.println("----------------------");
-
 		combat(vidaKaren, defKaren, atkKaren, vidaJogador, defJogador, atkJogador);
+		
+		Print("\n Karen: NÃAAAAAAAAO VOCÊ ESTRAGOU TUDO! *PANE NO SISTEMA* \n", TimeUnit.MILLISECONDS, temp_transicao);
+		Print("\n Auto Falante: Vulnerabilidades detectadas no computador central, O prédio se auto-destruíra em 5... 4... 3... 2... 1... \n", TimeUnit.MILLISECONDS, temp_transicao);
+		Print("\n Should I Stay or Should I Go por The Clash - Começa a tocar. \n", TimeUnit.MILLISECONDS, temp_transicao);
+		credits();
 
 		vitoria = 1;
 
@@ -1454,9 +1395,7 @@ public class cyberNoir {
 
 		int opcao;
 
-		int escolha = 0, escolha2 = 0;
-
-		Boolean quit = false, quit2 = false;
+		Boolean quit = false;
 
 		do {
 			opcao = main();
@@ -1464,30 +1403,12 @@ public class cyberNoir {
 			switch (opcao) {
 			case 1:
 				
-				escolha = controleCidades();
+				controleCidades();
+				
 				historia();
-				if (escolha == 1) {
-					controleGrajau();
-				}
-				if (escolha == 2) {
-					controleTaboao();
-				}
-
-				do {
-
-					escolha2 = controleCidades();
-
-					if (escolha2 == 1) {
-						System.out.println("----------------------");
-						System.out.println("Você já finalizou os casos deste distrito");
-						System.out.println("----------------------");
-					}
-					if (escolha2 == 2) {
-						quit2 = true;
-
-					}
-
-				} while (!quit2);
+				
+				controleGrajau();
+				
 				controleTaboao();
 
 				karen();
@@ -1511,7 +1432,6 @@ public class cyberNoir {
 				break;
 			}
 		} while (!quit);
-
 	}
 	
 public static void Print(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
